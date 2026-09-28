@@ -1,0 +1,325 @@
+.featuresSection {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-light);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* Background Soft Glow Circles */
+.glowBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 1200px;
+  background: radial-gradient(circle, rgba(212, 251, 32, 0.08) 0%, rgba(0, 59, 226, 0.04) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.featureRow {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+.featureRow:last-child {
+  margin-bottom: 0;
+}
+
+.textContent {
+  flex: 1;
+  max-width: 574px;
+}
+
+.heading {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 52.8px;
+  color: var(--dark-800);
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+/* Stats Row */
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-top: 40px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statNumber {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  color: var(--primary-blue);
+}
+
+.statLabel {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Feature 1 Visual Mockup */
+.visualWrapper1 {
+  position: relative;
+  flex: 1;
+  max-width: 580px;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewCard {
+  width: 373px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.previewCard:hover {
+  transform: translateY(-4px);
+}
+
+.floatingProgressBadge {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  z-index: 5;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  width: 210px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  animation: float 5s ease-in-out infinite;
+}
+
+.badgeProgressLabel {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 14px;
+  color: #242528;
+}
+
+.badgeProgressValue {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 52px;
+  color: #242528;
+  margin: 4px 0 8px;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 8px;
+  background-color: #f6f6f6;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.progressBar {
+  width: 55%;
+  height: 100%;
+  background-color: var(--accent-lime);
+  border-radius: 24px;
+}
+
+/* Feature 2 Visual Mockup */
+.visualWrapper2 {
+  position: relative;
+  flex: 1;
+  max-width: 540px;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.creatorImgContainer {
+  position: relative;
+  width: 420px;
+  height: 560px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
+}
+
+.creatorImg {
+  object-fit: cover;
+}
+
+/* Revenue Badges */
+.revenueBadge1 {
+  position: absolute;
+  top: 60px;
+  right: -20px;
+  z-index: 4;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  animation: float 6s ease-in-out infinite 0.5s;
+}
+
+.revenueBadge2 {
+  position: absolute;
+  top: 180px;
+  right: -30px;
+  z-index: 4;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  animation: float 7s ease-in-out infinite 1.5s;
+}
+
+.badgeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.badgeTitle {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 15px;
+  color: #242528;
+}
+
+.badgeDate {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 10px;
+  color: #82868e;
+}
+
+.badgeValueRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.badgeValue {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 24px;
+  color: #242528;
+}
+
+.badgeGrowth {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--primary-blue);
+  background: rgba(0, 59, 226, 0.08);
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+.studentsBadgeSmall {
+  position: absolute;
+  bottom: 40px;
+  left: -20px;
+  z-index: 4;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  animation: float 6.5s ease-in-out infinite 1s;
+}
+
+/* Feature Checkpoints List */
+.checkpointsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.checkpointItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.checkpointText {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--dark-800);
+}
+
+@media (max-width: 992px) {
+  .featureRow {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textContent {
+    max-width: 100%;
+  }
+
+  .statsRow {
+    justify-content: center;
+  }
+
+  .checkpointsList {
+    align-items: flex-start;
+    max-width: 400px;
+    margin: 36px auto 0;
+  }
+
+  .revenueBadge1, .revenueBadge2 {
+    right: 0;
+  }
+
+  .studentsBadgeSmall {
+    left: 0;
+  }
+}

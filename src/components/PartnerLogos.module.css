@@ -1,0 +1,38 @@
+.partnerSection {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.partnerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.partnerLogoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.partnerLogoItem:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .partnerSection {
+    padding: 50px 0;
+  }
+
+  .partnerContainer {
+    justify-content: center;
+    gap: 40px;
+  }
+}

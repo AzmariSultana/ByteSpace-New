@@ -1,0 +1,417 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 1024px;
+  background-color: var(--primary-blue);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.heroTitle {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 86.4px;
+  color: #ffffff;
+  max-width: 964px;
+  letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: #e5e6e8;
+  max-width: 710px;
+  margin-top: 20px;
+}
+
+/* Search Box */
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 574px;
+  max-width: 92%;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 6px 8px 6px 24px;
+  margin-top: 36px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  gap: 12px;
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.searchInput {
+  flex: 1;
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #242528;
+  background: transparent;
+}
+
+.searchInput::placeholder {
+  color: #82868e;
+}
+
+.searchBtn {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #242528;
+  background-color: var(--accent-lime);
+  padding: 12px 28px;
+  border-radius: 24px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.searchBtn:hover {
+  background-color: var(--accent-lime-hover);
+  transform: translateY(-1px);
+}
+
+/* Visual Stage */
+.visualStage {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  height: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.studentImageWrapper {
+  position: relative;
+  z-index: 2;
+  width: 578px;
+  height: 541px;
+  max-width: 90vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.studentImg {
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* Floating Badges */
+.badgeUiUx {
+  position: absolute;
+  left: 60px;
+  top: 130px;
+  z-index: 5;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  text-align: left;
+  animation: float 5s ease-in-out infinite;
+}
+
+.badgeUiUxTitle {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #242528;
+}
+
+.badgeUiUxMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 12px;
+  color: #82868e;
+}
+
+.badgeProgress {
+  position: absolute;
+  right: 60px;
+  top: 140px;
+  z-index: 5;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  width: 232px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  text-align: left;
+  animation: float 6s ease-in-out infinite 1s;
+}
+
+.badgeProgressLabel {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #242528;
+}
+
+.badgeProgressValue {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 56px;
+  color: #242528;
+  margin: 4px 0 8px;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 8px;
+  background-color: #f6f6f6;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.progressBar {
+  width: 55%;
+  height: 100%;
+  background-color: var(--accent-lime);
+  border-radius: 24px;
+}
+
+.badgeStudents {
+  position: absolute;
+  left: 20px;
+  bottom: 60px;
+  z-index: 5;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  text-align: left;
+  animation: float 5.5s ease-in-out infinite 0.5s;
+}
+
+.badgeStudentsHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeStudentsTitle {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #242528;
+}
+
+.badgeStudentsRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 12px;
+  color: #82868e;
+}
+
+.starIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.avatarStack {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.avatarItem {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-left: -12px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.avatarItem:first-child {
+  margin-left: 0;
+}
+
+.avatarCount {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--accent-lime);
+  border: 2px solid #ffffff;
+  margin-left: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-satoshi);
+  font-weight: 700;
+  font-size: 12px;
+  color: #242528;
+}
+
+/* 3D Floating Ornaments */
+.ornament {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.ornamentLeft1 {
+  left: -40px;
+  top: 180px;
+  width: 160px;
+  height: 160px;
+  animation: float 7s ease-in-out infinite;
+}
+
+.ornamentLeft2 {
+  left: 60px;
+  top: 360px;
+  width: 170px;
+  height: 170px;
+  animation: float 8s ease-in-out infinite 1.5s;
+}
+
+.ornamentLeft3 {
+  left: 10px;
+  bottom: 20px;
+  width: 180px;
+  height: 180px;
+  animation: float 6.5s ease-in-out infinite 0.7s;
+}
+
+.ornamentRight1 {
+  right: -30px;
+  top: 180px;
+  width: 160px;
+  height: 160px;
+  animation: float 7.5s ease-in-out infinite 1s;
+}
+
+.ornamentRight2 {
+  right: 70px;
+  top: 380px;
+  width: 180px;
+  height: 180px;
+  animation: float 8.5s ease-in-out infinite 2s;
+}
+
+.ornamentRight3 {
+  right: 20px;
+  bottom: 40px;
+  width: 170px;
+  height: 170px;
+  animation: float 6s ease-in-out infinite 1.2s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .badgeUiUx {
+    left: 20px;
+  }
+  .badgeProgress {
+    right: 20px;
+  }
+  .badgeStudents {
+    left: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroTitle {
+    font-size: 46px;
+    line-height: 56px;
+    padding: 0 16px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 20px;
+  }
+
+  .visualStage {
+    height: 460px;
+  }
+
+  .studentImageWrapper {
+    width: 420px;
+    height: 420px;
+  }
+
+  .badgeUiUx, .badgeProgress, .badgeStudents {
+    transform: scale(0.85);
+  }
+
+  .ornament {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroTitle {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .searchBar {
+    height: 52px;
+    padding: 4px 6px 4px 16px;
+  }
+
+  .searchBtn {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+
+  .badgeUiUx {
+    top: 40px;
+    left: 5px;
+  }
+
+  .badgeProgress {
+    top: 50px;
+    right: 5px;
+    width: 180px;
+  }
+
+  .badgeProgressValue {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .badgeStudents {
+    bottom: 20px;
+    left: 5px;
+  }
+}
