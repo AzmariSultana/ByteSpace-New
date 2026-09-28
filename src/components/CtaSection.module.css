@@ -1,0 +1,116 @@
+.ctaSection {
+  position: relative;
+  width: 100%;
+  min-height: 488px;
+  background-color: var(--primary-blue);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+/* Background Grid Lines */
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 110px 60px;
+  background-position: center center;
+}
+
+/* 3D Floating Ornaments */
+.coneLeft {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+  animation: float 7s ease-in-out infinite;
+}
+
+.coneRight {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 964px;
+}
+
+.title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 52.8px;
+  color: #ffffff;
+  max-width: 710px;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: #e5e6e8;
+  max-width: 964px;
+  margin-top: 20px;
+}
+
+.joinBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #242528;
+  background-color: var(--accent-lime);
+  padding: 14px 32px;
+  border-radius: 24px;
+  margin-top: 36px;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.joinBtn:hover {
+  background-color: var(--accent-lime-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .coneLeft, .coneRight {
+    opacity: 0.4;
+    transform: scale(0.7) translateY(-50%);
+  }
+}
