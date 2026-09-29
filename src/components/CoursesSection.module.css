@@ -130,24 +130,25 @@
 
 .thumbnailBadges {
   position: absolute;
-  top: 12px;
+  bottom: 12px;
   left: 12px;
   right: 12px;
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  z-index: 2;
 }
 
 .thumbnailBadge {
-  background: rgba(246, 246, 246, 0.7);
+  background: rgba(246, 246, 246, 0.65);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 24px;
-  padding: 6px 12px;
+  padding: 5px 10px;
   font-family: var(--font-satoshi);
   font-weight: 500;
-  font-size: 12px;
-  line-height: 14.4px;
+  font-size: 11px;
+  line-height: 14px;
   color: #4f4f4f;
   white-space: nowrap;
 }
@@ -156,23 +157,52 @@
 .cardBody {
   display: flex;
   flex-direction: column;
-  padding: 20px 8px 8px;
+  padding: 16px 8px 8px;
   flex: 1;
-  justify-content: space-between;
 }
 
 .cardHeader {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .cardTitle {
   font-family: var(--font-poppins);
   font-weight: 600;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 24px;
   color: #000000;
+  flex: 1;
+}
+
+.ratingGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.ratingValue {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #797979;
+}
+
+.starIcon {
+  width: 14px;
+  height: 14px;
+  fill: #ced0d3;
 }
 
 .cardAuthor {
@@ -188,7 +218,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 18px 0;
+  margin: 16px 0;
 }
 
 .levelPill {
@@ -245,13 +275,12 @@
   color: #242528;
 }
 
-/* Card Footer (Price & Rating) */
+/* Card Footer (Price) */
 .cardFooter {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid #f6f6f6;
+  justify-content: flex-start;
+  margin-top: 10px;
 }
 
 .priceGroup {
@@ -273,34 +302,6 @@
   font-weight: 400;
   font-size: 12px;
   color: #797979;
-}
-
-.ratingGroup {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.ratingValue {
-  font-family: var(--font-satoshi);
-  font-weight: 400;
-  font-size: 18px;
-  color: #797979;
-}
-
-.bookmarkBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: #ced0d3;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.bookmarkBtn:hover {
-  color: var(--primary-blue);
 }
 
 @media (max-width: 1024px) {

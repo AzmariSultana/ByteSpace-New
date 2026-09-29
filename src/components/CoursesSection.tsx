@@ -248,7 +248,21 @@ export default function CoursesSection() {
               {/* Card Body */}
               <div className={styles.cardBody}>
                 <div className={styles.cardHeader}>
-                  <h3 className={styles.cardTitle}>{course.title}</h3>
+                  <div className={styles.titleRow}>
+                    <h3 className={styles.cardTitle}>{course.title}</h3>
+                    <div className={styles.ratingGroup}>
+                      <span className={styles.ratingValue}>{course.rating}</span>
+                      <svg
+                        className={styles.starIcon}
+                        viewBox="0 0 24 24"
+                        fill="#ced0d3"
+                        width="16"
+                        height="16"
+                      >
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    </div>
+                  </div>
                   <span className={styles.cardAuthor}>{course.author}</span>
                 </div>
 
@@ -283,33 +297,11 @@ export default function CoursesSection() {
                   </div>
                 </div>
 
-                {/* Card Footer: Price and Rating */}
+                {/* Card Footer: Price */}
                 <div className={styles.cardFooter}>
                   <div className={styles.priceGroup}>
                     <span className={styles.priceValue}>{course.price}</span>
                     <span className={styles.priceUnit}>{course.priceUnit}</span>
-                  </div>
-
-                  <div className={styles.ratingGroup}>
-                    <span className={styles.ratingValue}>{course.rating}</span>
-                    <button
-                      className={styles.bookmarkBtn}
-                      onClick={() => toggleSave(course.id)}
-                      aria-label="Save Course"
-                    >
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill={savedCourses[course.id] ? "#003be2" : "none"}
-                        stroke={savedCourses[course.id] ? "#003be2" : "currentColor"}
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>

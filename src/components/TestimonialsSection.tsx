@@ -5,7 +5,7 @@ import styles from "./TestimonialsSection.module.css";
 const testimonials = [
   {
     name: "Sarah M.",
-    role: "Passionate Learner",
+    role: "Enthusiastic Learner",
     avatar: "/assets/images/testimonial-1.png",
     quote:
       "\"ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning.\"",

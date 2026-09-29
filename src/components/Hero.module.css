@@ -1,116 +1,61 @@
 .heroSection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
   position: relative;
   width: 100%;
-  min-height: 1024px;
-  background-color: var(--primary-blue);
+  height: calc(1024px * var(--scale));
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: #003be2;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+  background-size: calc(120px * var(--scale)) calc(120px * var(--scale));
+  background-position: calc(50% - 720px * var(--scale)) 0;
 }
 
-.heroContent {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-top: 150px;
+.heroStage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 1024px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
 }
 
-.heroTitle {
-  font-family: var(--font-poppins);
-  font-weight: 600;
-  font-size: 72px;
-  line-height: 86.4px;
-  color: #ffffff;
-  max-width: 964px;
-  letter-spacing: -0.02em;
+/* Header within hero stage */
+.heroHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 120px;
+  z-index: 50;
 }
 
-.heroSubtitle {
-  font-family: var(--font-satoshi);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28.8px;
-  color: #e5e6e8;
-  max-width: 710px;
-  margin-top: 20px;
+/* Giant Lime Green Backdrop Ring (Ellipse 7 in Figma: 1149x1149, 320px inside stroke, hollow center) */
+.limeBackdropRing {
+  position: absolute;
+  left: 145px;
+  top: 582px;
+  width: 1149px;
+  height: 1149px;
+  border-radius: 50%;
+  border: 320px solid #cbfc01;
+  background-color: transparent;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Search Box */
-.searchBar {
-  display: flex;
-  align-items: center;
-  width: 574px;
-  max-width: 92%;
-  height: 60px;
-  background-color: #ffffff;
-  border-radius: 40px;
-  padding: 6px 8px 6px 24px;
-  margin-top: 36px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  gap: 12px;
-}
-
-.searchIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-}
-
-.searchInput {
-  flex: 1;
-  font-family: var(--font-satoshi);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  color: #242528;
-  background: transparent;
-}
-
-.searchInput::placeholder {
-  color: #82868e;
-}
-
-.searchBtn {
-  font-family: var(--font-satoshi);
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  color: #242528;
-  background-color: var(--accent-lime);
-  padding: 12px 28px;
-  border-radius: 24px;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.searchBtn:hover {
-  background-color: var(--accent-lime-hover);
-  transform: translateY(-1px);
-}
-
-/* Visual Stage */
-.visualStage {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 30px auto 0;
-  height: 540px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
+/* Center Student Photo */
 .studentImageWrapper {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  left: 431px;
+  top: 512px;
   width: 578px;
   height: 541px;
-  max-width: 90vw;
+  pointer-events: none;
+  z-index: 2;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -119,60 +64,183 @@
 .studentImg {
   object-fit: contain;
   object-position: bottom;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero Content */
+.heroTitle {
+  position: absolute;
+  left: 252.5px;
+  top: 169px;
+  width: 935px;
+  height: 172px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 86.4px;
+  letter-spacing: -0.72px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.titleLine {
+  display: block;
+}
+
+.heroSubtitle {
+  position: absolute;
+  left: 310.5px;
+  top: 373px;
+  width: 819px;
+  height: 29px;
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Search Box */
+.searchForm {
+  position: absolute;
+  left: 429.5px;
+  top: 462px;
+  width: 581px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  pointer-events: auto;
+  z-index: 10;
+}
+
+.searchInputPill {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 24px;
+  height: 52px;
+  width: 461px;
+  padding: 0 24px;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.searchIcon {
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  font-family: var(--font-satoshi);
+  font-size: 18px;
+  color: #242528;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #82868e;
+}
+
+.searchBtn {
+  height: 46px;
+  width: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4fb20;
+  color: #242528;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.searchBtn:hover {
+  background-color: #c4ec1a;
+  transform: translateY(-1px);
 }
 
 /* Floating Badges */
 .badgeUiUx {
   position: absolute;
-  left: 60px;
-  top: 130px;
-  z-index: 5;
-  background: #ffffff;
+  left: 404px;
+  top: 639px;
+  width: 208px;
+  height: 70px;
   border-radius: 16px;
-  padding: 16px 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 14px 18px;
+  box-sizing: border-box;
   text-align: left;
-  animation: float 5s ease-in-out infinite;
+  z-index: 5;
 }
 
 .badgeUiUxTitle {
   font-family: var(--font-satoshi);
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 19.2px;
   color: #242528;
 }
 
 .badgeUiUxMeta {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 6px;
+  gap: 4px;
+  margin-top: 2px;
   font-family: var(--font-satoshi);
   font-weight: 400;
   font-size: 12px;
+  line-height: 19.2px;
+  color: #82868e;
+  white-space: nowrap;
+}
+
+.dot {
+  font-size: 10px;
   color: #82868e;
 }
 
 .badgeProgress {
   position: absolute;
-  right: 60px;
-  top: 140px;
-  z-index: 5;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 16px 20px;
+  left: 842px;
+  top: 651px;
   width: 232px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  height: 131px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 16px 18px;
+  box-sizing: border-box;
   text-align: left;
-  animation: float 6s ease-in-out infinite 1s;
+  z-index: 5;
 }
 
 .badgeProgressLabel {
   font-family: var(--font-satoshi);
   font-weight: 500;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 16.8px;
   color: #242528;
 }
 
@@ -180,13 +248,13 @@
   font-family: var(--font-poppins);
   font-weight: 600;
   font-size: 48px;
-  line-height: 56px;
+  line-height: 57.6px;
   color: #242528;
   margin: 4px 0 8px;
 }
 
 .progressTrack {
-  width: 100%;
+  width: 196px;
   height: 8px;
   background-color: #f6f6f6;
   border-radius: 24px;
@@ -194,35 +262,32 @@
 }
 
 .progressBar {
-  width: 55%;
+  width: 56%;
   height: 100%;
-  background-color: var(--accent-lime);
+  background-color: #d4fb20;
   border-radius: 24px;
 }
 
 .badgeStudents {
   position: absolute;
-  left: 20px;
-  bottom: 60px;
-  z-index: 5;
-  background: #ffffff;
+  left: 330px;
+  top: 852px;
+  width: 258px;
+  height: 121px;
   border-radius: 16px;
-  padding: 16px 20px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 14px 16px;
+  box-sizing: border-box;
   text-align: left;
-  animation: float 5.5s ease-in-out infinite 0.5s;
-}
-
-.badgeStudentsHeader {
-  display: flex;
-  flex-direction: column;
+  z-index: 5;
 }
 
 .badgeStudentsTitle {
   font-family: var(--font-satoshi);
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 19.2px;
   color: #242528;
 }
 
@@ -230,32 +295,37 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  margin-top: 4px;
+  margin-top: 2px;
+}
+
+.ratingText {
   font-family: var(--font-satoshi);
   font-weight: 400;
   font-size: 12px;
+  line-height: 19.2px;
   color: #82868e;
 }
 
 .starIcon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .avatarStack {
   display: flex;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .avatarItem {
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
-  margin-left: -12px;
-  overflow: hidden;
+  margin-left: -6px;
   object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #ffffff;
 }
 
 .avatarItem:first-child {
@@ -263,155 +333,84 @@
 }
 
 .avatarCount {
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background-color: var(--accent-lime);
-  border: 2px solid #ffffff;
-  margin-left: -12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #d4fb20;
+  color: #242528;
   font-family: var(--font-satoshi);
   font-weight: 700;
   font-size: 12px;
-  color: #242528;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -6px;
+  flex-shrink: 0;
+  border: 2px solid #ffffff;
 }
 
 /* 3D Floating Ornaments */
 .ornament {
   position: absolute;
   pointer-events: none;
-  z-index: 1;
-  transition: transform 0.3s ease;
 }
 
-.ornamentLeft1 {
-  left: -40px;
-  top: 180px;
-  width: 160px;
-  height: 160px;
-  animation: float 7s ease-in-out infinite;
+.ornament img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.ornamentLeft2 {
-  left: 60px;
-  top: 360px;
-  width: 170px;
-  height: 170px;
-  animation: float 8s ease-in-out infinite 1.5s;
+/* 1. Top-Left Lime Coil */
+.ornamentTopLeft {
+  left: 0;
+  top: 285px;
+  width: 195px;
+  height: 267px;
+  z-index: 2;
 }
 
-.ornamentLeft3 {
-  left: 10px;
-  bottom: 20px;
-  width: 180px;
-  height: 180px;
-  animation: float 6.5s ease-in-out infinite 0.7s;
+/* 2. Mid-Left White Squiggle */
+.ornamentMidLeft {
+  left: 216px;
+  top: 506px;
+  width: 114px;
+  height: 121px;
+  z-index: 2;
 }
 
-.ornamentRight1 {
-  right: -30px;
-  top: 180px;
-  width: 160px;
-  height: 160px;
-  animation: float 7.5s ease-in-out infinite 1s;
+/* 3. Bottom-Left White Torus */
+.ornamentBottomLeft {
+  left: 45px;
+  top: 756px;
+  width: 315px;
+  height: 230px;
+  z-index: 3;
 }
 
-.ornamentRight2 {
-  right: 70px;
-  top: 380px;
-  width: 180px;
-  height: 180px;
-  animation: float 8.5s ease-in-out infinite 2s;
+/* 4. Top-Right Lime Cylinder */
+.ornamentTopRight {
+  right: 0;
+  top: 264px;
+  width: 152px;
+  height: 302px;
+  z-index: 2;
 }
 
-.ornamentRight3 {
-  right: 20px;
-  bottom: 40px;
-  width: 170px;
-  height: 170px;
-  animation: float 6s ease-in-out infinite 1.2s;
+/* 5. Mid-Right White Tetrahedron */
+.ornamentMidRight {
+  left: 1132px;
+  top: 485px;
+  width: 122px;
+  height: 136px;
+  z-index: 2;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .badgeUiUx {
-    left: 20px;
-  }
-  .badgeProgress {
-    right: 20px;
-  }
-  .badgeStudents {
-    left: 10px;
-  }
-}
-
-@media (max-width: 900px) {
-  .heroTitle {
-    font-size: 46px;
-    line-height: 56px;
-    padding: 0 16px;
-  }
-
-  .heroSubtitle {
-    font-size: 16px;
-    line-height: 24px;
-    padding: 0 20px;
-  }
-
-  .visualStage {
-    height: 460px;
-  }
-
-  .studentImageWrapper {
-    width: 420px;
-    height: 420px;
-  }
-
-  .badgeUiUx, .badgeProgress, .badgeStudents {
-    transform: scale(0.85);
-  }
-
-  .ornament {
-    opacity: 0.5;
-  }
-}
-
-@media (max-width: 600px) {
-  .heroTitle {
-    font-size: 34px;
-    line-height: 42px;
-  }
-
-  .searchBar {
-    height: 52px;
-    padding: 4px 6px 4px 16px;
-  }
-
-  .searchBtn {
-    padding: 10px 18px;
-    font-size: 15px;
-  }
-
-  .badgeUiUx {
-    top: 40px;
-    left: 5px;
-  }
-
-  .badgeProgress {
-    top: 50px;
-    right: 5px;
-    width: 180px;
-  }
-
-  .badgeProgressValue {
-    font-size: 32px;
-    line-height: 38px;
-  }
-
-  .badgeStudents {
-    bottom: 20px;
-    left: 5px;
-  }
+/* 6. Bottom-Right White Coil */
+.ornamentBottomRight {
+  left: 1208px;
+  top: 724px;
+  width: 190px;
+  height: 250px;
+  z-index: 3;
 }
