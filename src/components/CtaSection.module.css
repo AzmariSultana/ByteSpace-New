@@ -1,116 +1,179 @@
 .ctaSection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
   position: relative;
   width: 100%;
-  min-height: 488px;
-  background-color: var(--primary-blue);
+  height: calc(488px * var(--scale));
+  background-color: #003be2;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 0;
 }
 
-/* Background Grid Lines */
-.gridBackground {
+.ctaStage {
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 488px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+  pointer-events: auto;
+}
+
+/* Blueprint grid SVG background */
+.gridSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 488px;
   pointer-events: none;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 110px 60px;
-  background-position: center center;
 }
 
 /* 3D Floating Ornaments */
-.coneLeft {
-  position: absolute;
-  left: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 240px;
-  height: 240px;
-  pointer-events: none;
-  animation: float 7s ease-in-out infinite;
+.ornamentImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.coneRight {
+/* 1. Lime Spring Top-Left (385x385 at relX:-118, relY:-162) */
+.ornamentSpringTopLeft {
   position: absolute;
-  right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 260px;
-  height: 260px;
+  left: -118px;
+  top: -162px;
+  width: 385px;
+  height: 385px;
   pointer-events: none;
-  animation: float 8s ease-in-out infinite 1s;
+  z-index: 1;
 }
 
+/* 2. White Spring Top-Center (175x175 at relX:178, relY:5, scaleX:-1) */
+.ornamentSpringWhite {
+  position: absolute;
+  left: 178px;
+  top: 5px;
+  width: 175px;
+  height: 175px;
+  transform: scaleX(-1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 3. White Cone Bottom-Left (188x188 at relX:-48, relY:225) */
+.ornamentConeWhite {
+  position: absolute;
+  left: -48px;
+  top: 225px;
+  width: 188px;
+  height: 188px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 4. Lime Torus Bottom-Left (342x342 at relX:20, relY:299) */
+.ornamentTorusLime {
+  position: absolute;
+  left: 20px;
+  top: 299px;
+  width: 342px;
+  height: 342px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 5. Lime Tetrahedron Top-Right (188x188 at relX:1080, relY:0) */
+.ornamentTetrahedronLime {
+  position: absolute;
+  left: 1080px;
+  top: 0px;
+  width: 188px;
+  height: 188px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 6. White Cylinder Top-Right (370x370 at relX:1226, relY:6) */
+.ornamentCylinderWhite {
+  position: absolute;
+  left: 1226px;
+  top: 6px;
+  width: 370px;
+  height: 370px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 7. Lime Spring Bottom-Right (330x330 at relX:1110, relY:289) */
+.ornamentSpringBottomRight {
+  position: absolute;
+  left: 1110px;
+  top: 289px;
+  width: 330px;
+  height: 330px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content Container (964x319 at relX:238, relY:85) */
 .ctaContent {
-  position: relative;
+  position: absolute;
+  left: 238px;
+  top: 85px;
+  width: 964px;
+  height: 319px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 964px;
 }
 
 .title {
-  font-family: var(--font-poppins);
+  margin: 0;
+  width: 710px;
+  height: 106px;
+  font-family: var(--font-poppins), 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 600;
   font-size: 44px;
   line-height: 52.8px;
-  color: #ffffff;
-  max-width: 710px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.44px;
+  color: #f5f5f6;
+  text-align: center;
 }
 
 .description {
-  font-family: var(--font-satoshi);
+  margin: 40px 0 0;
+  width: 964px;
+  height: 87px;
+  font-family: var(--font-satoshi), 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 28.8px;
-  color: #e5e6e8;
-  max-width: 964px;
-  margin-top: 20px;
+  color: #f5f5f6;
+  text-align: center;
 }
 
 .joinBtn {
+  margin-top: 40px;
+  width: 172px;
+  height: 46px;
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-satoshi);
+  background-color: #d4fb20;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-family: var(--font-satoshi), 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   color: #242528;
-  background-color: var(--accent-lime);
-  padding: 14px 32px;
-  border-radius: 24px;
-  margin-top: 36px;
-  transition: all 0.2s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .joinBtn:hover {
-  background-color: var(--accent-lime-hover);
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 900px) {
-  .title {
-    font-size: 34px;
-    line-height: 42px;
-  }
-
-  .description {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .coneLeft, .coneRight {
-    opacity: 0.4;
-    transform: scale(0.7) translateY(-50%);
-  }
+  opacity: 0.95;
 }

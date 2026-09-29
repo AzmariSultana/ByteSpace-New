@@ -13,18 +13,22 @@ const partners = [
 export default function PartnerLogos() {
   return (
     <section className={styles.partnerSection} aria-label="Partner Brands">
-      <div className={`container ${styles.partnerContainer}`}>
-        {partners.map((p, idx) => (
-          <div key={idx} className={styles.partnerLogoItem}>
-            <Image
-              src={p.src}
-              alt={p.name}
-              width={p.width}
-              height={p.height}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
-        ))}
+      <div className={styles.partnerStage}>
+        <div className={styles.partnerContainer}>
+          {partners.map((p, idx) => (
+            <div key={idx} className={styles.partnerLogoItem}>
+              <Image
+                src={p.src}
+                alt={p.name}
+                width={p.width}
+                height={p.height}
+                priority
+                unoptimized
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

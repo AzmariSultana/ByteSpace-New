@@ -13,9 +13,9 @@ const categories = [
 
 export default function CategoriesSection() {
   return (
-    <section className={styles.categoriesSection}>
-      <div className="container">
-        {/* Intro */}
+    <section className={styles.categoriesSection} aria-label="Explore Diverse Learning Paths">
+      <div className={styles.categoriesStage}>
+        {/* Intro (Frame 9 / 34:684: 917x117 at relX:261.5, relY:72) */}
         <div className={styles.intro}>
           <h2 className={styles.title}>
             Explore Diverse Learning Paths at Bytespace
@@ -28,7 +28,7 @@ export default function CategoriesSection() {
           </p>
         </div>
 
-        {/* 6 Category Cards */}
+        {/* 6 Category Cards (Frame 10 / 34:725: 1202x167 at relX:119, relY:257) */}
         <div className={styles.categoriesGrid}>
           {categories.map((cat, idx) => (
             <div key={idx} className={styles.categoryCard}>
@@ -38,6 +38,9 @@ export default function CategoriesSection() {
                   alt={cat.name}
                   width={36}
                   height={36}
+                  priority
+                  unoptimized
+                  className={styles.iconImg}
                 />
               </div>
               <span className={styles.categoryName}>{cat.name}</span>
@@ -48,3 +51,4 @@ export default function CategoriesSection() {
     </section>
   );
 }
+

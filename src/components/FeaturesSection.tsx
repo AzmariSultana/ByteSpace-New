@@ -2,452 +2,313 @@ import React from "react";
 import Image from "next/image";
 import styles from "./FeaturesSection.module.css";
 
+const studentAvatars = [
+  "/assets/images/avatar-1.png",
+  "/assets/images/avatar-2.png",
+  "/assets/images/avatar-3.png",
+  "/assets/images/avatar-4.png",
+  "/assets/images/avatar-5.png",
+  "/assets/images/avatar-6.png",
+  "/assets/images/avatar-7.png",
+];
+
+const courseCardAvatars = [
+  "/assets/images/avatar-2.png",
+  "/assets/images/avatar-8.png",
+  "/assets/images/testimonial-1.png",
+  "/assets/images/avatar-9.png",
+];
+
 export default function FeaturesSection() {
   return (
-    <section className={styles.featuresSection}>
-      <div className={styles.glowBg} />
+    <section className={styles.featuresSection} aria-label="Why Choose ByteSpace">
+      <div className={styles.featuresStage}>
+        {/* Background Ambient Radial Glows (Figma Group 5 & Ellipse 12) */}
+        <div className={styles.bgGlows} aria-hidden="true">
+          <div className={styles.glowTopLeft} />
+          <div className={styles.glowTopRight} />
+          <div className={styles.glowMidLeft} />
+          <div className={styles.glowBottomRight} />
+          <div className={styles.glowBottomLeft} />
+        </div>
 
-      <div className="container">
-        {/* Row 1: Professional Growth */}
-        <div className={styles.featureRow}>
-          {/* Left Text */}
-          <div className={styles.textContent}>
-            <h2 className={styles.heading}>
-              Your Path to Professional Growth Starts Here!
-            </h2>
-            <p className={styles.description}>
-              Explore our curated selection of courses tailored to enhance your
-              capabilities and accelerate your career journey. Whether you are
-              looking to sharpen specific skills, gain industry expertise, or
-              embark on a new career path entirely, we have the resources you need.
-            </p>
+        {/* ================= ROW 1 ================= */}
+        {/* Left Text Block 1 (relX: 121px, relY: 194px) */}
+        <div className={styles.textContent1}>
+          <h2 className={styles.heading1}>
+            Your Path to Professional Growth Starts Here!
+          </h2>
+          <p className={styles.description1}>
+            Explore our curated selection of courses tailored to enhance your
+            capabilities and accelerate your career journey. Whether you are
+            looking to sharpen specific skills, gain industry expertise, or
+            embark on a new career path entirely, we have the resources you need.
+          </p>
 
-            <div className={styles.statsRow}>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>12K</span>
-                <span className={styles.statLabel}>Students</span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>70+</span>
-                <span className={styles.statLabel}>Courses</span>
-              </div>
-              <div className={styles.statItem}>
-                <span className={styles.statNumber}>16</span>
-                <span className={styles.statLabel}>Creators</span>
-              </div>
+          <div className={styles.statsRow}>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>12K</span>
+              <span className={styles.statLabel}>Students</span>
             </div>
-          </div>
-
-          {/* Right Visual (Course Preview Card + Floating Progress Badge) */}
-          <div className={styles.visualWrapper1}>
-            <div className={styles.previewCard}>
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  height: "195px",
-                  borderRadius: "12px",
-                  overflow: "hidden",
-                }}
-              >
-                <Image
-                  src="/assets/images/course-1.png"
-                  alt="Learn Figma from Basic"
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "12px",
-                    left: "12px",
-                    display: "flex",
-                    gap: "8px",
-                    zIndex: 2,
-                  }}
-                >
-                  <span
-                    style={{
-                      background: "rgba(246, 246, 246, 0.65)",
-                      backdropFilter: "blur(8px)",
-                      borderRadius: "24px",
-                      padding: "5px 10px",
-                      fontSize: "11px",
-                      fontWeight: 500,
-                      color: "#4f4f4f",
-                    }}
-                  >
-                    17 Lessons
-                  </span>
-                  <span
-                    style={{
-                      background: "rgba(246, 246, 246, 0.65)",
-                      backdropFilter: "blur(8px)",
-                      borderRadius: "24px",
-                      padding: "5px 10px",
-                      fontSize: "11px",
-                      fontWeight: 500,
-                      color: "#4f4f4f",
-                    }}
-                  >
-                    2 hours 16 mins
-                  </span>
-                  <span
-                    style={{
-                      background: "rgba(246, 246, 246, 0.65)",
-                      backdropFilter: "blur(8px)",
-                      borderRadius: "24px",
-                      padding: "5px 10px",
-                      fontSize: "11px",
-                      fontWeight: 500,
-                      color: "#4f4f4f",
-                    }}
-                  >
-                    59 Comments
-                  </span>
-                </div>
-              </div>
-
-              <div style={{ padding: "16px 8px 8px" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "space-between",
-                    gap: "12px",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-poppins)",
-                      fontSize: "18px",
-                      fontWeight: 600,
-                      lineHeight: "24px",
-                      color: "#000000",
-                    }}
-                  >
-                    Learn Figma from Basic
-                  </h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "4px",
-                      flexShrink: 0,
-                      paddingTop: "2px",
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "var(--font-satoshi)",
-                        fontSize: "15px",
-                        color: "#797979",
-                      }}
-                    >
-                      4.5
-                    </span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="#ced0d3"
-                      width="14"
-                      height="14"
-                    >
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--font-satoshi)",
-                    fontSize: "12px",
-                    color: "#797979",
-                    display: "block",
-                    marginTop: "4px",
-                  }}
-                >
-                  by purepearl studio
-                </span>
-
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginTop: "16px",
-                  }}
-                >
-                  <span
-                    style={{
-                      background: "#f5f5f6",
-                      padding: "6px 12px",
-                      borderRadius: "24px",
-                      fontSize: "12px",
-                      fontWeight: 500,
-                      color: "#4b4c53",
-                    }}
-                  >
-                    Beginner
-                  </span>
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <Image
-                      src="/assets/images/avatar-2.png"
-                      alt="Student"
-                      width={30}
-                      height={30}
-                      style={{ borderRadius: "50%", border: "2px solid #fff" }}
-                    />
-                    <Image
-                      src="/assets/images/avatar-8.png"
-                      alt="Student"
-                      width={30}
-                      height={30}
-                      style={{
-                        borderRadius: "50%",
-                        border: "2px solid #fff",
-                        marginLeft: "-8px",
-                      }}
-                    />
-                    <div
-                      style={{
-                        width: "30px",
-                        height: "30px",
-                        borderRadius: "50%",
-                        background: "var(--accent-lime)",
-                        border: "2px solid #fff",
-                        marginLeft: "-8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "11px",
-                        fontWeight: 700,
-                      }}
-                    >
-                      26+
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    gap: "4px",
-                    marginTop: "12px",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-poppins)",
-                      fontWeight: 600,
-                      fontSize: "20px",
-                      color: "var(--primary-blue)",
-                    }}
-                  >
-                    $25
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-satoshi)",
-                      fontSize: "12px",
-                      color: "#797979",
-                    }}
-                  >
-                    /lifetime
-                  </span>
-                </div>
-              </div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>70+</span>
+              <span className={styles.statLabel}>Courses</span>
             </div>
-
-            {/* Floating Learning Progress Card */}
-            <div className={styles.floatingProgressBadge}>
-              <div className={styles.badgeProgressLabel}>Learning Progress</div>
-              <div className={styles.badgeProgressValue}>55%</div>
-              <div className={styles.progressTrack}>
-                <div className={styles.progressBar} />
-              </div>
+            <div className={styles.statItem}>
+              <span className={styles.statNumber}>16</span>
+              <span className={styles.statLabel}>Creators</span>
             </div>
           </div>
         </div>
 
-        {/* Row 2: Create & Manage Courses Easily */}
-        <div className={styles.featureRow}>
-          {/* Left Visual (Girl Creator + Revenue & Student Badges) */}
-          <div className={styles.visualWrapper2}>
-            <div className={styles.creatorImgContainer}>
+        {/* Right Visual Stage 1 (relX: 758px, relY: 120px) */}
+        <div className={styles.visualStage1}>
+          {/* 1. Course Card */}
+          <div className={styles.courseCard}>
+            <div className={styles.cardThumbnailWrapper}>
               <Image
-                src="/assets/images/feature-girl.png"
-                alt="Creator with laptop"
+                src="/assets/images/course-1.png"
+                alt="Learn Figma from Basic"
                 fill
-                className={styles.creatorImg}
+                className={styles.cardThumbnailImg}
               />
-            </div>
-
-            {/* Total Revenue Badge */}
-            <div className={styles.revenueBadge1}>
-              <div className={styles.badgeHeader}>
-                <span className={styles.badgeTitle}>Total Revenue</span>
-                <span className={styles.badgeDate}>July 1-28</span>
-              </div>
-              <div className={styles.badgeValueRow}>
-                <span className={styles.badgeValue}>$120.29</span>
-                <span className={styles.badgeGrowth}>+12$</span>
+              <div className={styles.cardThumbnailBadges}>
+                <span className={styles.thumbnailBadge}>17 Lessons</span>
+                <span className={styles.thumbnailBadge}>2 hours 16 mins</span>
+                <span className={styles.thumbnailBadge}>59 Comments</span>
               </div>
             </div>
 
-            {/* Year to Date Badge */}
-            <div className={styles.revenueBadge2}>
-              <div className={styles.badgeHeader}>
-                <span className={styles.badgeTitle}>Year to Date</span>
-                <span className={styles.badgeDate}>2023</span>
-              </div>
-              <div className={styles.badgeValueRow}>
-                <span className={styles.badgeValue}>$1,200.38</span>
-                <span className={styles.badgeGrowth}>+12$</span>
-              </div>
-            </div>
-
-            {/* Happy Students Badge */}
-            <div className={styles.studentsBadgeSmall}>
-              <div
-                style={{
-                  fontFamily: "var(--font-satoshi)",
-                  fontWeight: 500,
-                  fontSize: "14px",
-                  color: "#242528",
-                }}
-              >
-                Happy Students
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px",
-                  marginTop: "2px",
-                  fontSize: "11px",
-                  color: "#82868e",
-                }}
-              >
-                <span>4.5 (240)</span>
-                <span>⭐</span>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: "8px",
-                }}
-              >
-                <Image
-                  src="/assets/images/avatar-1.png"
-                  alt="Student"
-                  width={28}
-                  height={28}
-                  style={{ borderRadius: "50%", border: "2px solid #fff" }}
-                />
-                <Image
-                  src="/assets/images/avatar-2.png"
-                  alt="Student"
-                  width={28}
-                  height={28}
-                  style={{
-                    borderRadius: "50%",
-                    border: "2px solid #fff",
-                    marginLeft: "-6px",
-                  }}
-                />
-                <Image
-                  src="/assets/images/avatar-3.png"
-                  alt="Student"
-                  width={28}
-                  height={28}
-                  style={{
-                    borderRadius: "50%",
-                    border: "2px solid #fff",
-                    marginLeft: "-6px",
-                  }}
-                />
-                <div
-                  style={{
-                    width: "28px",
-                    height: "28px",
-                    borderRadius: "50%",
-                    background: "var(--accent-lime)",
-                    border: "2px solid #fff",
-                    marginLeft: "-6px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "10px",
-                    fontWeight: 700,
-                  }}
-                >
-                  2K+
+            <div className={styles.cardBody}>
+              <div className={styles.cardTitleRow}>
+                <h3 className={styles.cardTitle}>Learn Figma from Basic</h3>
+                <div className={styles.cardRating}>
+                  <span className={styles.cardRatingValue}>4.5</span>
+                  <svg
+                    className={styles.starIcon}
+                    viewBox="0 0 24 24"
+                    fill="#d4fb20"
+                    width="20"
+                    height="20"
+                  >
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
                 </div>
+              </div>
+
+              <span className={styles.cardAuthor}>
+                by <span className={styles.cardAuthorName}>purepearl studio</span>
+              </span>
+
+              <div className={styles.cardMetaRow}>
+                <div className={styles.levelBadge}>
+                  <svg
+                    className={styles.levelIcon}
+                    viewBox="0 0 20 20"
+                    fill="#4b4c53"
+                    width="13"
+                    height="13"
+                  >
+                    <path d="M2 13h3v5H2v-5zm6-5h3v10H8V8zm6-6h3v16h-3V2z" />
+                  </svg>
+                  <span>Beginner</span>
+                </div>
+
+                <div className={styles.cardAvatarStack}>
+                  {courseCardAvatars.map((av, idx) => (
+                    <Image
+                      key={idx}
+                      src={av}
+                      alt="Enrolled student"
+                      width={32}
+                      height={32}
+                      className={styles.cardAvatarItem}
+                    />
+                  ))}
+                  <div className={styles.cardAvatarCount}>26+</div>
+                </div>
+              </div>
+
+              <div className={styles.cardPriceRow}>
+                <span className={styles.cardPrice}>$25</span>
+                <span className={styles.cardPriceUnit}>/lifetime</span>
               </div>
             </div>
           </div>
 
-          {/* Right Text */}
-          <div className={styles.textContent}>
-            <h2 className={styles.heading}>
-              Create &amp; Manage Courses Easily.
-            </h2>
-            <p className={styles.description}>
-              ByteSpace supports individuals or entities in the creation,
-              publication, and administration of educational courses.
-            </p>
+          {/* 2. Lime Spring Ornament behind the boy */}
+          <div className={styles.springBoyWrapper}>
+            <Image
+              src="/assets/images/feature-spring-boy.png"
+              alt="Decorative spring ornament"
+              width={215}
+              height={215}
+              className={styles.springBoyImg}
+            />
+          </div>
 
-            <div className={styles.checkpointsList}>
-              <div className={styles.checkpointItem}>
-                <Image
-                  src="/assets/svgs/check-circle.svg"
-                  alt="Check"
-                  width={24}
-                  height={24}
-                  className={styles.checkIcon}
-                />
-                <span className={styles.checkpointText}>
-                  Share Your Expertise
-                </span>
-              </div>
+          {/* 3. The Boy with Laptop */}
+          <div className={styles.boyImageWrapper}>
+            <Image
+              src="/assets/images/hero-student.png"
+              alt="Student holding laptop"
+              width={577}
+              height={540}
+              className={styles.boyImg}
+              priority
+            />
+          </div>
 
-              <div className={styles.checkpointItem}>
-                <Image
-                  src="/assets/svgs/check-circle.svg"
-                  alt="Check"
-                  width={24}
-                  height={24}
-                  className={styles.checkIcon}
-                />
-                <span className={styles.checkpointText}>
-                  Monetize Your Passion
-                </span>
-              </div>
+          {/* 4. Floating Learning Progress Badge */}
+          <div className={styles.progressBadge}>
+            <span className={styles.progressBadgeTitle}>Learning Progress</span>
+            <span className={styles.progressBadgeValue}>55%</span>
+            <div className={styles.progressTrack}>
+              <div className={styles.progressBar} />
+            </div>
+          </div>
+        </div>
 
-              <div className={styles.checkpointItem}>
-                <Image
-                  src="/assets/svgs/check-circle.svg"
-                  alt="Check"
-                  width={24}
-                  height={24}
-                  className={styles.checkIcon}
-                />
-                <span className={styles.checkpointText}>
-                  Flexibility and Autonomy
-                </span>
-              </div>
+        {/* ================= ROW 2 ================= */}
+        {/* Left Visual Stage 2 (relX: 121px, relY: 744px) */}
+        <div className={styles.visualStage2}>
+          {/* 1. Total Revenue Badge (Top Left behind girl) */}
+          <div className={styles.revenueBadge1}>
+            <div className={styles.revenueBadgeHeader}>
+              <span className={styles.revenueBadgeTitle}>Total Revenue</span>
+              <span className={styles.revenueBadgeDate}>July 1-28</span>
+            </div>
+            <div className={styles.revenueBadgeValueRow}>
+              <span className={styles.revenueBadgeValue}>$120.29</span>
+              <span className={styles.revenueBadgePill}>+12$</span>
+            </div>
+            <div className={styles.revenueProgressTrack}>
+              <div className={styles.revenueProgressBar} />
+            </div>
+          </div>
 
-              <div className={styles.checkpointItem}>
+          {/* 2. Year to Date Badge (Middle Left behind girl) */}
+          <div className={styles.revenueBadge2}>
+            <div className={styles.revenueBadgeHeader}>
+              <span className={styles.revenueBadgeTitle}>Year to Date</span>
+              <span className={styles.revenueBadgeDate}>2023</span>
+            </div>
+            <span className={styles.revenueBadgeValue2}>$1,200.38</span>
+            <div className={styles.revenuePillWrapper}>
+              <span className={styles.revenueBadgePill}>+12$</span>
+            </div>
+          </div>
+
+          {/* 3. Lime Spring Ornament behind girl on the right */}
+          <div className={styles.springGirlWrapper}>
+            <Image
+              src="/assets/images/feature-spring-girl.png"
+              alt="Decorative spring ornament"
+              width={215}
+              height={215}
+              className={styles.springGirlImg}
+            />
+          </div>
+
+          {/* 4. The Creator Girl */}
+          <div className={styles.girlImageWrapper}>
+            <Image
+              src="/assets/images/feature-girl.png"
+              alt="Creator with tablet and headset"
+              width={435}
+              height={596}
+              className={styles.girlImg}
+              priority
+            />
+          </div>
+
+          {/* 5. Happy Students Badge (Bottom Right in front of girl) */}
+          <div className={styles.happyStudentsBadge}>
+            <span className={styles.studentsBadgeTitle}>Happy Students</span>
+            <div className={styles.studentsRatingRow}>
+              <span className={styles.studentsRatingText}>
+                <strong className={styles.ratingScoreBold}>4.5</strong> (240)
+              </span>
+              <svg
+                className={styles.starIconSmall}
+                viewBox="0 0 24 24"
+                fill="#d4fb20"
+                width="16"
+                height="16"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+
+            <div className={styles.studentsAvatarStack}>
+              {studentAvatars.map((av, idx) => (
                 <Image
-                  src="/assets/svgs/check-circle.svg"
-                  alt="Check"
-                  width={24}
-                  height={24}
-                  className={styles.checkIcon}
+                  key={idx}
+                  src={av}
+                  alt="Happy student avatar"
+                  width={43}
+                  height={43}
+                  className={styles.studentsAvatarImg}
                 />
-                <span className={styles.checkpointText}>Build a Community</span>
-              </div>
+              ))}
+              <div className={styles.studentsAvatarCount}>2K+</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Text Block 2 (relX: 741px, relY: 848px) */}
+        <div className={styles.textContent2}>
+          <h2 className={styles.heading2}>
+            Create &amp; Manage Courses Easily.
+          </h2>
+          <p className={styles.description2}>
+            <strong className={styles.brandBold}>ByteSpace</strong> supports individuals or entities in the creation,
+            publication, and administration of educational courses.
+          </p>
+
+          <div className={styles.checklist}>
+            <div className={styles.checkItem}>
+              <Image
+                src="/assets/svgs/check-circle.svg"
+                alt="Checked"
+                width={24}
+                height={24}
+                className={styles.checkIcon}
+              />
+              <span className={styles.checkText}>Share Your Expertise</span>
+            </div>
+
+            <div className={styles.checkItem}>
+              <Image
+                src="/assets/svgs/check-circle.svg"
+                alt="Checked"
+                width={24}
+                height={24}
+                className={styles.checkIcon}
+              />
+              <span className={styles.checkText}>Monetize Your Passion</span>
+            </div>
+
+            <div className={styles.checkItem}>
+              <Image
+                src="/assets/svgs/check-circle.svg"
+                alt="Checked"
+                width={24}
+                height={24}
+                className={styles.checkIcon}
+              />
+              <span className={styles.checkText}>Flexibility and Autonomy</span>
+            </div>
+
+            <div className={styles.checkItem}>
+              <Image
+                src="/assets/svgs/check-circle.svg"
+                alt="Checked"
+                width={24}
+                height={24}
+                className={styles.checkIcon}
+              />
+              <span className={styles.checkText}>Build a Community</span>
             </div>
           </div>
         </div>

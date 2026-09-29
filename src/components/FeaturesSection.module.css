@@ -1,67 +1,143 @@
 .featuresSection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
   position: relative;
   width: 100%;
-  background-color: var(--bg-light);
-  padding: 120px 0;
+  height: calc(1460px * var(--scale));
+  background-color: #fafafa;
   overflow: hidden;
 }
 
-/* Background Soft Glow Circles */
-.glowBg {
+.featuresStage {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1200px;
-  height: 1200px;
-  background: radial-gradient(circle, rgba(212, 251, 32, 0.08) 0%, rgba(0, 59, 226, 0.04) 50%, transparent 70%);
+  top: 0;
+  width: 1440px;
+  height: 1460px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+  pointer-events: auto;
+}
+
+/* Background Ambient Radial Glows (Figma Group 5 & Ellipse 12) */
+.bgGlows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1460px;
   pointer-events: none;
   z-index: 1;
 }
 
-.featureRow {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 100px;
+/* Top Left Lime Glow (Ellipse 11: 1137x1137, opacity: 0.40) */
+.glowTopLeft {
+  position: absolute;
+  left: -152px;
+  top: -466px;
+  width: 1137px;
+  height: 1137px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.10) 53%, rgba(203, 252, 1, 0.02) 75%, transparent 100%);
+  filter: blur(40px);
 }
 
-.featureRow:last-child {
-  margin-bottom: 0;
+/* Top Right Soft Blue Glow (Ellipse 10: 1137x1137, opacity: 0.08) */
+.glowTopRight {
+  position: absolute;
+  left: 811px;
+  top: -458px;
+  width: 1137px;
+  height: 1137px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 59, 226, 0.08) 0%, rgba(0, 59, 226, 0.02) 53%, transparent 100%);
+  filter: blur(40px);
 }
 
-.textContent {
-  flex: 1;
-  max-width: 574px;
+/* Middle Left Soft Blue Glow (Ellipse 9: 1137x1137, opacity: 0.16) */
+.glowMidLeft {
+  position: absolute;
+  left: -508px;
+  top: 183px;
+  width: 1137px;
+  height: 1137px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 59, 226, 0.16) 0%, rgba(0, 59, 226, 0.04) 53%, transparent 100%);
+  filter: blur(50px);
 }
 
-.heading {
+/* Bottom Right Blue Glow (Ellipse 8: 1137x1137, opacity: 0.24) */
+.glowBottomRight {
+  position: absolute;
+  left: 722px;
+  top: 788px;
+  width: 1137px;
+  height: 1137px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, transparent 100%);
+  filter: blur(50px);
+}
+
+/* Bottom Left Lime Glow (Ellipse 12: 672x672, opacity: 0.60) */
+.glowBottomLeft {
+  position: absolute;
+  left: -287px;
+  top: 946px;
+  width: 672px;
+  height: 672px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.15) 53%, transparent 100%);
+  filter: blur(40px);
+}
+
+/* ================= ROW 1 ================= */
+/* Text Block 1 - Left Side (relX: 121px, relY: 194px) */
+.textContent1 {
+  position: absolute;
+  left: 121px;
+  top: 194px;
+  width: 574px;
+  height: 404px;
+  z-index: 10;
+}
+
+.heading1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 577px;
+  height: 106px;
+  margin: 0;
   font-family: var(--font-poppins);
   font-weight: 600;
   font-size: 44px;
   line-height: 52.8px;
-  color: var(--dark-800);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.44px;
+  color: #242528;
 }
 
-.description {
+.description1 {
+  position: absolute;
+  left: 0;
+  top: 146px;
+  width: 477px;
+  height: 145px;
+  margin: 0;
   font-family: var(--font-satoshi);
   font-weight: 400;
   font-size: 18px;
   line-height: 28.8px;
-  color: var(--text-muted);
-  margin-top: 20px;
+  color: #4b4c53;
 }
 
-/* Stats Row */
 .statsRow {
+  position: absolute;
+  left: 0;
+  top: 331px;
+  width: 314px;
+  height: 73px;
   display: flex;
-  align-items: center;
-  gap: 48px;
-  margin-top: 40px;
+  align-items: flex-start;
+  gap: 56px;
 }
 
 .statItem {
@@ -74,77 +150,311 @@
   font-weight: 500;
   font-size: 36px;
   line-height: 44px;
-  color: var(--primary-blue);
+  letter-spacing: -0.36px;
+  color: #003be2;
 }
 
 .statLabel {
   font-family: var(--font-satoshi);
   font-weight: 400;
   font-size: 18px;
-  line-height: 24px;
-  color: var(--text-muted);
-  margin-top: 4px;
+  line-height: 28.8px;
+  color: #4b4c53;
+  margin-top: 0;
 }
 
-/* Feature 1 Visual Mockup */
-.visualWrapper1 {
+/* Visual Stage 1 - Right Side (relX: 758px, relY: 120px) */
+.visualStage1 {
+  position: absolute;
+  left: 758px;
+  top: 120px;
+  width: 621px;
+  height: 552px;
+  z-index: 10;
+}
+
+/* Course Card (373x384 at relX:0, relY:0) */
+.courseCard {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 373px;
+  height: 384px;
+  background-color: #ffffff;
+  border: 1px solid #ced0d3;
+  border-radius: 24px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.cardThumbnailWrapper {
   position: relative;
+  width: 341px;
+  height: 195px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cardThumbnailImg {
+  object-fit: cover;
+}
+
+.cardThumbnailBadges {
+  position: absolute;
+  bottom: 16px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.thumbnailBadge {
+  background: rgba(246, 246, 246, 0.6);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 6px 12px;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #4f4f4f;
+  white-space: nowrap;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px 8px;
   flex: 1;
-  max-width: 580px;
-  height: 520px;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cardTitle {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  color: #000000;
+  width: 234px;
+  white-space: nowrap;
+}
+
+.cardRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.cardRatingValue {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #4f4f4f;
+}
+
+.starIcon {
+  width: 20px;
+  height: 20px;
+  fill: #d4fb20;
+}
+
+.cardAuthor {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #4f4f4f;
+  margin-top: 2px;
+}
+
+.cardAuthorName {
+  color: #003be2;
+  font-family: var(--font-satoshi);
+}
+
+.cardMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.levelBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #f5f5f6;
+  padding: 6px 12px;
+  border-radius: 24px;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #4b4c53;
+}
+
+.levelIcon {
+  width: 13px;
+  height: 13px;
+  fill: #4b4c53;
+}
+
+.cardAvatarStack {
+  display: flex;
+  align-items: center;
+}
+
+.cardAvatarItem {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+.cardAvatarItem:first-child {
+  margin-left: 0;
+}
+
+.cardAvatarCount {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  margin-left: -8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
 }
 
-.previewCard {
-  width: 373px;
-  background-color: #ffffff;
-  border-radius: 24px;
-  padding: 16px;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
-  position: relative;
-  z-index: 2;
-  transition: transform 0.3s ease;
+.cardPriceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 16px;
 }
 
-.previewCard:hover {
-  transform: translateY(-4px);
+.cardPrice {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  color: #003be2;
 }
 
-.floatingProgressBadge {
+.cardPriceUnit {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #4f4f4f;
+}
+
+/* Lime Spring Ornament over the Learning Progress card */
+.springBoyWrapper {
   position: absolute;
-  top: 40px;
-  right: 20px;
+  left: 406px;
+  top: 67px;
+  width: 215px;
+  height: 215px;
   z-index: 5;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 16px 20px;
-  width: 210px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  animation: float 5s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.badgeProgressLabel {
+.springBoyImg {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* Boy with Laptop */
+.boyImageWrapper {
+  position: absolute;
+  left: 0px;
+  top: 12px;
+  width: 577px;
+  height: 540px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.boyImg {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0.5px 0.7px 3px rgba(0, 0, 0, 0.04))
+          drop-shadow(2.2px 3.2px 5.7px rgba(0, 0, 0, 0.06))
+          drop-shadow(5.4px 7.7px 9.6px rgba(0, 0, 0, 0.07))
+          drop-shadow(10.2px 14.6px 16.1px rgba(0, 0, 0, 0.08))
+          drop-shadow(16.9px 24.2px 24px rgba(0, 0, 0, 0.09))
+          drop-shadow(25.8px 36.9px 36px rgba(0, 0, 0, 0.10))
+          drop-shadow(37.1px 53px 56px rgba(0, 0, 0, 0.105))
+          drop-shadow(51px 72.9px 72px rgba(0, 0, 0, 0.13));
+}
+
+/* Floating Learning Progress Badge */
+.progressBadge {
+  position: absolute;
+  left: 345px;
+  top: 213px;
+  width: 232px;
+  height: 138px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.progressBadgeTitle {
   font-family: var(--font-satoshi);
   font-weight: 500;
   font-size: 14px;
+  line-height: 24px;
   color: #242528;
 }
 
-.badgeProgressValue {
+.progressBadgeValue {
   font-family: var(--font-poppins);
   font-weight: 600;
-  font-size: 44px;
-  line-height: 52px;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.48px;
   color: #242528;
-  margin: 4px 0 8px;
+  margin: 0 0 8px;
 }
 
 .progressTrack {
-  width: 100%;
+  width: 200px;
   height: 8px;
   background-color: #f6f6f6;
   border-radius: 24px;
@@ -152,133 +462,331 @@
 }
 
 .progressBar {
-  width: 55%;
+  width: 112px;
   height: 100%;
-  background-color: var(--accent-lime);
+  background-color: #d4fb20;
   border-radius: 24px;
 }
 
-/* Feature 2 Visual Mockup */
-.visualWrapper2 {
-  position: relative;
-  flex: 1;
-  max-width: 540px;
-  height: 580px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ================= ROW 2 ================= */
+/* Visual Stage 2 - Left Side (relX: 121px, relY: 744px) */
+.visualStage2 {
+  position: absolute;
+  left: 121px;
+  top: 744px;
+  width: 541px;
+  height: 596px;
+  z-index: 10;
 }
 
-.creatorImgContainer {
-  position: relative;
-  width: 420px;
-  height: 560px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
-}
-
-.creatorImg {
-  object-fit: cover;
-}
-
-/* Revenue Badges */
+/* Total Revenue Badge (Top Left behind girl) */
 .revenueBadge1 {
   position: absolute;
-  top: 60px;
-  right: -20px;
-  z-index: 4;
-  background: #ffffff;
+  left: 0;
+  top: 44px;
+  width: 232px;
+  height: 119px;
+  background-color: #003be2;
   border-radius: 16px;
-  padding: 14px 18px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  animation: float 6s ease-in-out infinite 0.5s;
-}
-
-.revenueBadge2 {
-  position: absolute;
-  top: 180px;
-  right: -30px;
-  z-index: 4;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 14px 18px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  animation: float 7s ease-in-out infinite 1.5s;
-}
-
-.badgeHeader {
+  padding: 16px;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
 }
 
-.badgeTitle {
+.revenueBadgeHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.revenueBadgeTitle {
   font-family: var(--font-satoshi);
   font-weight: 500;
-  font-size: 15px;
-  color: #242528;
+  font-size: 16px;
+  line-height: 19px;
+  color: #f5f5f6;
 }
 
-.badgeDate {
+.revenueBadgeDate {
   font-family: var(--font-satoshi);
   font-weight: 400;
   font-size: 10px;
-  color: #82868e;
+  line-height: 12px;
+  color: #f5f5f6;
 }
 
-.badgeValueRow {
+.revenueBadgeValueRow {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
   gap: 8px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
-.badgeValue {
+.revenueBadgeValue {
   font-family: var(--font-poppins);
   font-weight: 600;
   font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  color: #f5f5f6;
+}
+
+.revenueBadgePill {
+  background-color: #cbfc01;
+  border-radius: 24px;
+  padding: 2px 8px;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 20px;
   color: #242528;
 }
 
-.badgeGrowth {
-  font-family: var(--font-satoshi);
-  font-weight: 500;
-  font-size: 11px;
-  color: var(--primary-blue);
-  background: rgba(0, 59, 226, 0.08);
-  padding: 2px 6px;
-  border-radius: 12px;
+.revenueProgressTrack {
+  width: 200px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-top: 8px;
 }
 
-.studentsBadgeSmall {
+.revenueProgressBar {
+  width: 112px;
+  height: 100%;
+  background-color: #d4fb20;
+  border-radius: 24px;
+}
+
+/* Year to Date Badge (Middle Left behind girl) */
+.revenueBadge2 {
   position: absolute;
-  bottom: 40px;
-  left: -20px;
-  z-index: 4;
-  background: #ffffff;
+  left: 0;
+  top: 194px;
+  width: 134px;
+  height: 135px;
+  background-color: #003be2;
   border-radius: 16px;
-  padding: 14px 18px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  animation: float 6.5s ease-in-out infinite 1s;
-}
-
-/* Feature Checkpoints List */
-.checkpointsList {
+  padding: 16px;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 36px;
 }
 
-.checkpointItem {
+.revenueBadgeValue2 {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.24px;
+  color: #f5f5f6;
+  margin-top: 4px;
+}
+
+.revenuePillWrapper {
+  margin-top: 8px;
+}
+
+/* Lime Spring Ornament over girl's shoulder on the right */
+.springGirlWrapper {
+  position: absolute;
+  left: 305px;
+  top: 114px;
+  width: 215px;
+  height: 215px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.springGirlImg {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* The Creator Girl Image */
+.girlImageWrapper {
+  position: absolute;
+  left: 28px;
+  top: 0;
+  width: 435px;
+  height: 596px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.girlImg {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0.5px 0.7px 3px rgba(0, 0, 0, 0.04))
+          drop-shadow(2.2px 3.2px 5.7px rgba(0, 0, 0, 0.06))
+          drop-shadow(5.4px 7.7px 9.6px rgba(0, 0, 0, 0.07))
+          drop-shadow(10.2px 14.6px 16.1px rgba(0, 0, 0, 0.08))
+          drop-shadow(16.9px 24.2px 24px rgba(0, 0, 0, 0.09))
+          drop-shadow(25.8px 36.9px 36px rgba(0, 0, 0, 0.10))
+          drop-shadow(37.1px 53px 56px rgba(0, 0, 0, 0.105))
+          drop-shadow(51px 72.9px 72px rgba(0, 0, 0, 0.13));
+}
+
+/* Happy Students Badge (Bottom Right in front of girl) */
+.happyStudentsBadge {
+  position: absolute;
+  left: 283px;
+  top: 413px;
+  width: 258px;
+  height: 123px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.studentsBadgeTitle {
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242528;
+}
+
+.studentsRatingRow {
   display: flex;
   align-items: center;
+  gap: 4px;
+  margin-top: 0;
+}
+
+.studentsRatingText {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #82868e;
+}
+
+.ratingScoreBold {
+  font-family: var(--font-satoshi);
+  font-weight: 700;
+  color: #242528;
+}
+
+.starIconSmall {
+  width: 16px;
+  height: 16px;
+  fill: #d4fb20;
+}
+
+.studentsAvatarStack {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.studentsAvatarImg {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-left: -16px;
+  object-fit: cover;
+}
+
+.studentsAvatarImg:first-child {
+  margin-left: 0;
+}
+
+.studentsAvatarCount {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background-color: #d4fb20;
+  border: 2px solid #ffffff;
+  margin-left: -16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-satoshi);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #242528;
+}
+
+/* Text Block 2 - Right Side (relX: 741px, relY: 848px) */
+.textContent2 {
+  position: absolute;
+  left: 741px;
+  top: 848px;
+  width: 580px;
+  height: 388px;
+  z-index: 10;
+}
+
+.heading2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 391px;
+  height: 106px;
+  margin: 0;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 52.8px;
+  letter-spacing: -0.44px;
+  color: #242528;
+}
+
+.description2 {
+  position: absolute;
+  left: 0;
+  top: 146px;
+  width: 574px;
+  height: 58px;
+  margin: 0;
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #4b4c53;
+}
+
+.brandBold {
+  font-family: var(--font-satoshi);
+  font-weight: 700;
+  color: #242528;
+}
+
+.checklist {
+  position: absolute;
+  left: 0;
+  top: 244px;
+  width: 231px;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .checkIcon {
@@ -287,39 +795,11 @@
   flex-shrink: 0;
 }
 
-.checkpointText {
+.checkText {
   font-family: var(--font-satoshi);
   font-weight: 500;
   font-size: 18px;
-  line-height: 24px;
-  color: var(--dark-800);
-}
-
-@media (max-width: 992px) {
-  .featureRow {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .textContent {
-    max-width: 100%;
-  }
-
-  .statsRow {
-    justify-content: center;
-  }
-
-  .checkpointsList {
-    align-items: flex-start;
-    max-width: 400px;
-    margin: 36px auto 0;
-  }
-
-  .revenueBadge1, .revenueBadge2 {
-    right: 0;
-  }
-
-  .studentsBadgeSmall {
-    left: 0;
-  }
+  line-height: 22px;
+  color: #242528;
+  white-space: nowrap;
 }

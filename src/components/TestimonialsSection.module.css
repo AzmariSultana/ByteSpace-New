@@ -1,133 +1,196 @@
 .testimonialsSection {
-  width: 100%;
-  background-color: var(--bg-light);
-  padding: 120px 0;
+  --scale: calc(min(100vw, 1440px) / 1440px);
   position: relative;
+  width: 100%;
+  height: calc(784px * var(--scale));
+  background-color: #fafafa;
   overflow: hidden;
 }
 
+.testimonialsStage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 784px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+  pointer-events: auto;
+}
+
+/* Background Ambient Radial Glows (Figma Ellipse 11, 12, 8) */
+.bgGlows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 784px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ellipse 11: 1137x1137 at relX:842, relY:-241, lime gradient, opacity: 0.40, blur: 40px */
+.glowTopRight {
+  position: absolute;
+  left: 842px;
+  top: -241px;
+  width: 1137px;
+  height: 1137px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(203, 252, 1, 1) 0%, rgba(203, 252, 1, 0.23) 53%, rgba(203, 252, 1, 0.06) 75%, rgba(203, 252, 1, 0) 100%);
+  opacity: 0.4;
+  filter: blur(40px);
+}
+
+/* Ellipse 12: 672x672 at relX:395, relY:-138, lime gradient, opacity: 0.60, blur: 40px */
+.glowTopCenter {
+  position: absolute;
+  left: 395px;
+  top: -138px;
+  width: 672px;
+  height: 672px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(203, 252, 1, 1) 0%, rgba(203, 252, 1, 0.23) 53%, rgba(203, 252, 1, 0.06) 75%, rgba(203, 252, 1, 0) 100%);
+  opacity: 0.6;
+  filter: blur(40px);
+}
+
+/* Ellipse 8: 1137x1137 at relX:-442, relY:149, blue gradient, opacity: 0.24, blur: 40px */
+.glowBottomLeft {
+  position: absolute;
+  left: -442px;
+  top: 149px;
+  width: 1137px;
+  height: 1137px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 59, 226, 1) 0%, rgba(0, 59, 226, 0.23) 53%, rgba(0, 59, 226, 0.06) 75%, rgba(0, 59, 226, 0) 100%);
+  opacity: 0.24;
+  filter: blur(40px);
+}
+
+/* Content Container: 1204x653 at relX:118, relY:74 */
+.content {
+  position: absolute;
+  left: 118px;
+  top: 74px;
+  width: 1204px;
+  height: 653px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  z-index: 10;
+}
+
+/* Header Text Row: 1200x145, gap: 43px */
 .headerRow {
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 40px;
+  align-items: flex-start;
+  width: 1200px;
+  height: 145px;
+  gap: 43px;
 }
 
 .title {
-  flex: 1;
-  max-width: 577px;
-  font-family: var(--font-poppins);
+  margin: 0;
+  width: 577px;
+  height: 106px;
+  font-family: var(--font-poppins), 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 600;
   font-size: 44px;
   line-height: 52.8px;
-  color: var(--dark-800);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.44px;
+  color: #000000;
 }
 
 .description {
-  flex: 1;
-  max-width: 580px;
-  font-family: var(--font-satoshi);
+  margin: 0;
+  width: 580px;
+  height: 145px;
+  font-family: var(--font-satoshi), 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 28.8px;
-  color: var(--text-muted);
+  color: #4f4f4f;
 }
 
+/* Cards Row: 1204x436, gap: 41px */
 .cardsContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 41px;
+  width: 1204px;
 }
 
+/* Testimonial Card: 374px wide, radius: 24px, padding: 24px, gap: 24px */
 .card {
+  width: 374px;
+  box-sizing: border-box;
   background-color: #ffffff;
   border-radius: 24px;
-  padding: 28px 24px;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 24px;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
-.authorWrapper {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.avatarWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .avatar {
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .authorMeta {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 
 .authorName {
-  font-family: var(--font-poppins);
+  margin: 0;
+  font-family: var(--font-poppins), 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 600;
   font-size: 20px;
-  line-height: 26px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
   color: #000000;
 }
 
 .authorRole {
-  font-family: var(--font-satoshi);
+  margin: 0;
+  font-family: var(--font-satoshi), 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: var(--primary-blue);
-}
-
-.starsRow {
-  display: flex;
-  gap: 4px;
-  color: #ffc107;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: #003be2;
 }
 
 .quoteText {
-  font-family: var(--font-satoshi);
+  margin: 0;
+  width: 326px;
+  font-family: var(--font-satoshi), 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 28.8px;
   color: #4f4f4f;
   font-style: normal;
 }
 
-@media (max-width: 1024px) {
-  .headerRow {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .title, .description {
-    max-width: 100%;
-  }
-
-  .cardsContainer {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .cardsContainer {
-    grid-template-columns: 1fr;
-  }
-
-  .title {
-    font-size: 32px;
-    line-height: 40px;
-  }
-}
