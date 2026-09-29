@@ -28,56 +28,59 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className={styles.testimonialsSection}>
-      <div className="container">
-        {/* Header Row */}
-        <div className={styles.headerRow}>
-          <h2 className={styles.title}>
-            Discover What Our Community Is Saying
-          </h2>
-          <p className={styles.description}>
-            At ByteSpace, our vibrant community of learners and creators is at
-            the heart of what we do. Hear directly from those who have
-            experienced the transformative journey of learning and creating on
-            our platform. Explore testimonials that reflect the diverse
-            perspectives of enthusiastic learners and accomplished creators.
-          </p>
+    <section className={styles.testimonialsSection} aria-label="Community Testimonials">
+      <div className={styles.testimonialsStage}>
+        {/* Background Ambient Radial Glows (Figma Ellipse 11, 12, 8) */}
+        <div className={styles.bgGlows} aria-hidden="true">
+          <div className={styles.glowTopRight} />
+          <div className={styles.glowTopCenter} />
+          <div className={styles.glowBottomLeft} />
         </div>
 
-        {/* 3 Testimonial Cards */}
-        <div className={styles.cardsContainer}>
-          {testimonials.map((t, idx) => (
-            <div key={idx} className={styles.card}>
-              <div className={styles.authorWrapper}>
-                <Image
-                  src={t.avatar}
-                  alt={t.name}
-                  width={80}
-                  height={80}
-                  className={styles.avatar}
-                />
+        {/* Content Container (1204x653 at relX:118, relY:74) */}
+        <div className={styles.content}>
+          {/* Header Row */}
+          <div className={styles.headerRow}>
+            <h2 className={styles.title}>
+              Discover What Our<br />Community Is Saying
+            </h2>
+            <p className={styles.description}>
+              At ByteSpace, our vibrant community of learners and creators is at
+              the heart of what we do. Hear directly from those who have
+              experienced the transformative journey of learning and creating on
+              our platform. Explore testimonials that reflect the diverse
+              perspectives of enthusiastic learners and accomplished creators.
+            </p>
+          </div>
+
+          {/* 3 Testimonial Cards */}
+          <div className={styles.cardsContainer}>
+            {testimonials.map((t, idx) => (
+              <div key={idx} className={styles.card}>
+                <div className={styles.avatarWrapper}>
+                  <Image
+                    src={t.avatar}
+                    alt={t.name}
+                    width={80}
+                    height={80}
+                    priority
+                    unoptimized
+                    className={styles.avatar}
+                  />
+                </div>
+
                 <div className={styles.authorMeta}>
                   <h3 className={styles.authorName}>{t.name}</h3>
                   <span className={styles.authorRole}>{t.role}</span>
-                  <div className={styles.starsRow} aria-label="5 out of 5 stars">
-                    {[...Array(5)].map((_, i) => (
-                      <Image
-                        key={i}
-                        src="/assets/svgs/icon-star.svg"
-                        alt="Star"
-                        width={16}
-                        height={16}
-                      />
-                    ))}
-                  </div>
                 </div>
-              </div>
 
-              <blockquote className={styles.quoteText}>{t.quote}</blockquote>
-            </div>
-          ))}
+                <p className={styles.quoteText}>{t.quote}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
