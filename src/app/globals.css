@@ -23,7 +23,6 @@
   --border-light: #e5e6e8;
   --border-muted: #ced0d3;
   
-  --font-poppins: 'Poppins', sans-serif;
   --font-satoshi: 'Satoshi', sans-serif;
   --font-clash: 'Clash Display', sans-serif;
 
@@ -37,7 +36,18 @@
   padding: 0;
 }
 
-html,
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 body {
   width: 100%;
   overflow-x: hidden;
