@@ -5,6 +5,7 @@
   height: calc(1460px * var(--scale));
   background-color: #fafafa;
   overflow: hidden;
+  contain: paint;
 }
 
 .featuresStage {
@@ -13,80 +14,13 @@
   top: 0;
   width: 1440px;
   height: 1460px;
-  transform: translateX(-50%) scale(var(--scale));
+  transform: translate3d(-50%, 0, 0) scale(var(--scale));
   transform-origin: top center;
   pointer-events: auto;
-}
-
-/* Background Ambient Radial Glows (Figma Group 5 & Ellipse 12) */
-.bgGlows {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1440px;
-  height: 1460px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Top Left Lime Glow (Ellipse 11: 1137x1137, opacity: 0.40) */
-.glowTopLeft {
-  position: absolute;
-  left: -152px;
-  top: -466px;
-  width: 1137px;
-  height: 1137px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.10) 53%, rgba(203, 252, 1, 0.02) 75%, transparent 100%);
-  filter: blur(40px);
-}
-
-/* Top Right Soft Blue Glow (Ellipse 10: 1137x1137, opacity: 0.08) */
-.glowTopRight {
-  position: absolute;
-  left: 811px;
-  top: -458px;
-  width: 1137px;
-  height: 1137px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 59, 226, 0.08) 0%, rgba(0, 59, 226, 0.02) 53%, transparent 100%);
-  filter: blur(40px);
-}
-
-/* Middle Left Soft Blue Glow (Ellipse 9: 1137x1137, opacity: 0.16) */
-.glowMidLeft {
-  position: absolute;
-  left: -508px;
-  top: 183px;
-  width: 1137px;
-  height: 1137px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 59, 226, 0.16) 0%, rgba(0, 59, 226, 0.04) 53%, transparent 100%);
-  filter: blur(50px);
-}
-
-/* Bottom Right Blue Glow (Ellipse 8: 1137x1137, opacity: 0.24) */
-.glowBottomRight {
-  position: absolute;
-  left: 722px;
-  top: 788px;
-  width: 1137px;
-  height: 1137px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, transparent 100%);
-  filter: blur(50px);
-}
-
-/* Bottom Left Lime Glow (Ellipse 12: 672x672, opacity: 0.60) */
-.glowBottomLeft {
-  position: absolute;
-  left: -287px;
-  top: 946px;
-  width: 672px;
-  height: 672px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.15) 53%, transparent 100%);
-  filter: blur(40px);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #fafafa url('/assets/images/features-bg.webp') no-repeat 0 0;
+  background-size: 1440px 1460px;
 }
 
 /* ================= ROW 1 ================= */
@@ -374,14 +308,14 @@
   color: #4f4f4f;
 }
 
-/* Lime Spring Ornament over the Learning Progress card */
+/* Lime Spring Ornament behind the Learning Progress card */
 .springBoyWrapper {
   position: absolute;
-  left: 406px;
-  top: 67px;
+  left: 392px;
+  top: 74px;
   width: 215px;
   height: 215px;
-  z-index: 5;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -400,20 +334,17 @@
   height: 540px;
   z-index: 3;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .boyImg {
   object-fit: contain;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0.5px 0.7px 3px rgba(0, 0, 0, 0.04))
-          drop-shadow(2.2px 3.2px 5.7px rgba(0, 0, 0, 0.06))
-          drop-shadow(5.4px 7.7px 9.6px rgba(0, 0, 0, 0.07))
-          drop-shadow(10.2px 14.6px 16.1px rgba(0, 0, 0, 0.08))
-          drop-shadow(16.9px 24.2px 24px rgba(0, 0, 0, 0.09))
-          drop-shadow(25.8px 36.9px 36px rgba(0, 0, 0, 0.10))
-          drop-shadow(37.1px 53px 56px rgba(0, 0, 0, 0.105))
-          drop-shadow(51px 72.9px 72px rgba(0, 0, 0, 0.13));
+  filter:
+    drop-shadow(8px 12px 16px rgba(0, 0, 0, 0.14))
+    drop-shadow(24px 36px 36px rgba(0, 0, 0, 0.16))
+    drop-shadow(40px 60px 60px rgba(0, 0, 0, 0.12));
 }
 
 /* Floating Learning Progress Badge */
@@ -427,12 +358,10 @@
   border-radius: 16px;
   padding: 16px;
   box-sizing: border-box;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
   z-index: 4;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
 }
 
 .progressBadgeTitle {
@@ -490,11 +419,10 @@
   border-radius: 16px;
   padding: 16px;
   box-sizing: border-box;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
   z-index: 1;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
 }
 
 .revenueBadgeHeader {
@@ -521,9 +449,6 @@
 .revenueBadgeValueRow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 200px;
-  gap: 8px;
   margin-top: 8px;
 }
 
@@ -534,17 +459,6 @@
   line-height: 32px;
   letter-spacing: -0.24px;
   color: #f5f5f6;
-}
-
-.revenueBadgePill {
-  background-color: #cbfc01;
-  border-radius: 24px;
-  padding: 2px 8px;
-  font-family: var(--font-satoshi);
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 20px;
-  color: #242528;
 }
 
 .revenueProgressTrack {
@@ -574,11 +488,10 @@
   border-radius: 16px;
   padding: 16px;
   box-sizing: border-box;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
   z-index: 1;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
 }
 
 .revenueBadgeValue2 {
@@ -595,14 +508,26 @@
   margin-top: 8px;
 }
 
-/* Lime Spring Ornament over girl's shoulder on the right */
+.revenueBadgePill {
+  display: inline-block;
+  background-color: #cbfc01;
+  border-radius: 24px;
+  padding: 2px 8px;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 20px;
+  color: #242528;
+}
+
+/* Lime Spring Ornament behind girl on the right */
 .springGirlWrapper {
   position: absolute;
-  left: 305px;
-  top: 114px;
+  left: 282px;
+  top: 102px;
   width: 215px;
   height: 215px;
-  z-index: 4;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -621,20 +546,17 @@
   height: 596px;
   z-index: 3;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .girlImg {
   object-fit: contain;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0.5px 0.7px 3px rgba(0, 0, 0, 0.04))
-          drop-shadow(2.2px 3.2px 5.7px rgba(0, 0, 0, 0.06))
-          drop-shadow(5.4px 7.7px 9.6px rgba(0, 0, 0, 0.07))
-          drop-shadow(10.2px 14.6px 16.1px rgba(0, 0, 0, 0.08))
-          drop-shadow(16.9px 24.2px 24px rgba(0, 0, 0, 0.09))
-          drop-shadow(25.8px 36.9px 36px rgba(0, 0, 0, 0.10))
-          drop-shadow(37.1px 53px 56px rgba(0, 0, 0, 0.105))
-          drop-shadow(51px 72.9px 72px rgba(0, 0, 0, 0.13));
+  filter:
+    drop-shadow(8px 12px 16px rgba(0, 0, 0, 0.14))
+    drop-shadow(24px 36px 36px rgba(0, 0, 0, 0.16))
+    drop-shadow(40px 60px 60px rgba(0, 0, 0, 0.12));
 }
 
 /* Happy Students Badge (Bottom Right in front of girl) */
@@ -648,12 +570,10 @@
   border-radius: 16px;
   padding: 16px;
   box-sizing: border-box;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
   z-index: 4;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
 }
 
 .studentsBadgeTitle {
