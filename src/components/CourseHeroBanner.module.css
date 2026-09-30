@@ -1,0 +1,209 @@
+.heroSection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
+  position: relative;
+  width: 100%;
+  height: calc(957px * var(--scale));
+  overflow: hidden;
+  background-color: #003be2;
+}
+
+.heroStage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 957px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+}
+
+/* 3D Floating Ornaments */
+.ornamentTopLeft {
+  position: absolute;
+  left: -76px;
+  top: 149px;
+  width: 332px;
+  height: 331px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ornamentBottomLeft {
+  position: absolute;
+  left: 34px;
+  top: 632px;
+  width: 188px;
+  height: 188px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ornamentTopRight {
+  position: absolute;
+  left: 1161px;
+  top: 169px;
+  width: 222px;
+  height: 222px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ornamentBottomRight {
+  position: absolute;
+  left: 1214px;
+  top: 571px;
+  width: 357px;
+  height: 356px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Course Header Info at (122, 172) */
+.courseHeaderInfo {
+  position: absolute;
+  left: 122px;
+  top: 172px;
+  width: 1283px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.titleCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.courseTitle {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43.2px;
+  color: #f5f5f6;
+}
+
+.courseSubtitle {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f5f5f6;
+}
+
+.courseAuthor {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #f1f4fe;
+}
+
+.metaPillsRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.whitePill {
+  height: 40px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242528;
+}
+
+.shareBtn {
+  height: 40px;
+  background: #d4fb20;
+  border-radius: 24px;
+  padding: 8px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242528;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.shareBtn:hover {
+  transform: translateY(-1px);
+  background-color: #c4ec1a;
+}
+
+/* Video Player Card at (125, 416, 720x479) */
+.videoPlayerCard {
+  position: absolute;
+  left: 125px;
+  top: 416px;
+  width: 720px;
+  height: 479px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #443131;
+  background-image: url('/assets/images/figma_71d7929ee0ecb2198c9955a8e842f4991dcb4655.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 10;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.videoThumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playButton {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 104px;
+  height: 104px;
+  border-radius: 24px;
+  background: rgba(61, 61, 61, 0.24);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.playButton:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.playIconInner {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

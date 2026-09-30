@@ -3,10 +3,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Header.module.css";
+import { usePathname } from "next/navigation";
+import styles from "./PageHeader.module.css";
 
-export default function Header() {
+interface PageHeaderProps {
+  activeNav?: "home" | "courses" | "creators" | "none";
+}
+
+export default function PageHeader({ activeNav }: PageHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isCourses = activeNav ? activeNav === "courses" : pathname?.startsWith("/search") || pathname?.startsWith("/course");
+  const isCreators = activeNav ? activeNav === "creators" : pathname?.startsWith("/creator-profile");
+  const isHome = activeNav ? activeNav === "home" : pathname === "/";
 
   return (
     <header className={styles.header}>
@@ -16,7 +26,7 @@ export default function Header() {
           src="/assets/svgs/logo.svg"
           alt="ByteSpace"
           width={171}
-          height={35}
+          height={37}
           priority
         />
       </Link>
@@ -26,13 +36,22 @@ export default function Header() {
         className={`${styles.nav} ${mobileMenuOpen ? styles.navMobileOpen : ""}`}
         aria-label="Main Navigation"
       >
-        <Link href="/" className={`${styles.navLink} ${styles.navLinkActive}`}>
+        <Link
+          href="/"
+          className={`${styles.navLink} ${isHome ? styles.navLinkActive : ""}`}
+        >
           Home
         </Link>
-        <Link href="/search" className={styles.navLink}>
+        <Link
+          href="/search"
+          className={`${styles.navLink} ${isCourses ? styles.navLinkActive : ""}`}
+        >
           Courses
         </Link>
-        <Link href="/creator-profile" className={styles.navLink}>
+        <Link
+          href="/creator-profile"
+          className={`${styles.navLink} ${isCreators ? styles.navLinkActive : ""}`}
+        >
           Creators
         </Link>
       </nav>

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Header from "./Header";
+import GridBackground from "./GridBackground";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -16,72 +17,81 @@ export default function Hero() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroStage}>
+        {/* Exact Background Grid matching Figma 12:224 Group 4 */}
+        <GridBackground height={1024} width={1440} opacity={0.12} />
+
         {/* Header inside Hero Frame */}
         <Header />
 
         {/* 3D Floating Ornaments */}
-        {/* 1. Top-Left Lime Coil */}
+        {/* 1. Top-Left Lime Spring (Figma 46:90) */}
         <div className={`${styles.ornament} ${styles.ornamentTopLeft}`}>
           <Image
-            src="/assets/images/ornament-spring-lime.png"
+            src="/assets/images/hero-spring-lime-sharp.png"
             alt=""
-            width={195}
-            height={267}
+            width={385}
+            height={385}
+            unoptimized
             priority
           />
         </div>
 
-        {/* 2. Mid-Left White Squiggle */}
+        {/* 2. Mid-Left White Squiggle (Figma 46:95) */}
         <div className={`${styles.ornament} ${styles.ornamentMidLeft}`}>
           <Image
-            src="/assets/images/ornament-squiggle-white.png"
+            src="/assets/images/hero-squiggle-white-sharp.png"
             alt=""
-            width={114}
-            height={121}
+            width={175}
+            height={175}
+            unoptimized
             priority
           />
         </div>
 
-        {/* 3. Bottom-Left White Torus */}
+        {/* 3. Bottom-Left White Torus (Figma 46:105, unbroken ring) */}
         <div className={`${styles.ornament} ${styles.ornamentBottomLeft}`}>
           <Image
-            src="/assets/images/ornament-torus-perfect.png"
+            src="/assets/images/hero-torus-white-sharp.png"
             alt=""
-            width={299}
-            height={218}
+            width={342}
+            height={342}
+            unoptimized
             priority
           />
         </div>
 
-        {/* 4. Top-Right Lime Cylinder */}
+        {/* 4. Top-Right Lime Cylinder (Figma 46:110) */}
         <div className={`${styles.ornament} ${styles.ornamentTopRight}`}>
           <Image
-            src="/assets/images/ornament-cylinder-lime.png"
+            src="/assets/images/hero-cylinder-lime-sharp.png"
             alt=""
-            width={152}
-            height={302}
+            width={370}
+            height={370}
+            unoptimized
             priority
           />
         </div>
 
-        {/* 5. Mid-Right White Tetrahedron */}
+        {/* 5. Mid-Right White Tetrahedron (Figma 46:80) */}
         <div className={`${styles.ornament} ${styles.ornamentMidRight}`}>
           <Image
-            src="/assets/images/ornament-tetrahedron.png"
+            src="/assets/images/hero-tetrahedron-white-sharp.png"
             alt=""
-            width={122}
-            height={136}
+            width={188}
+            height={188}
+            unoptimized
             priority
           />
         </div>
 
-        {/* 6. Bottom-Right White Coil */}
+        {/* 6. Bottom-Right White Coil (Figma 46:85) */}
         <div className={`${styles.ornament} ${styles.ornamentBottomRight}`}>
           <Image
-            src="/assets/images/ornament-coil-perfect.png"
+            src="/assets/images/hero-coil-white-sharp.png"
             alt=""
-            width={190}
-            height={250}
+            width={330}
+            height={330}
+            unoptimized
             priority
           />
         </div>
@@ -124,7 +134,8 @@ export default function Hero() {
         <div className={styles.badgeStudents}>
           <div className={styles.badgeStudentsTitle}>Happy Students</div>
           <div className={styles.badgeStudentsRating}>
-            <span className={styles.ratingText}>4.5 (240)</span>
+            <span className={styles.ratingScore}>4.5</span>
+            <span className={styles.ratingCount}>(240)</span>
             <svg
               className={styles.starIcon}
               width="16"

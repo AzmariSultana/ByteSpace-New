@@ -1,0 +1,134 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 120px;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+.logo {
+  position: absolute;
+  left: 122px;
+  top: 35px;
+  width: 171px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav {
+  position: absolute;
+  left: 614.5px;
+  top: 47px;
+  width: 210px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navLink {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #f5f5f6;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  opacity: 0.8;
+}
+
+.navLinkActive {
+  font-weight: 500;
+}
+
+.actions {
+  position: absolute;
+  left: 1146px;
+  top: 48px;
+  width: 174px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.signInBtn {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f5f5f6;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.signInBtn:hover {
+  opacity: 0.8;
+}
+
+.joinBtn {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f5f5f6;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.joinBtn:hover {
+  opacity: 0.8;
+}
+
+.cartBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.cartBtn svg {
+  stroke: #f5f5f6;
+}
+
+.cartBtn:hover svg {
+  opacity: 0.8;
+}
+
+.mobileMenuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 60;
+}
+
+.mobileMenuToggle span {
+  width: 100%;
+  height: 2px;
+  background-color: #f5f5f6;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}

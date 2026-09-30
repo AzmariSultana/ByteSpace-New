@@ -1,0 +1,312 @@
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* Search Hero Section (1440 x 360) */
+.heroSection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
+  position: relative;
+  width: 100%;
+  height: calc(360px * var(--scale));
+  overflow: hidden;
+  background-color: #003be2;
+}
+
+.heroStage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 360px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+}
+
+/* 3D Floating Ornaments in Hero */
+.ornamentLeftTorus {
+  position: absolute;
+  left: -97px;
+  top: 149px;
+  width: 332px;
+  height: 331px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ornamentLeftSpring {
+  position: absolute;
+  left: 34px;
+  top: 632px;
+  width: 188px;
+  height: 188px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ornamentRightSphere {
+  position: absolute;
+  left: 1154px;
+  top: 164px;
+  width: 222px;
+  height: 222px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ornamentRightCone {
+  position: absolute;
+  left: 1214px;
+  top: 571px;
+  width: 357px;
+  height: 356px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Search Content in Hero */
+.searchHeroContent {
+  position: absolute;
+  left: 408px;
+  top: 164px;
+  width: 624px;
+  height: 127px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  z-index: 10;
+}
+
+.heroTitle {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43.2px;
+  color: #f5f5f6;
+  text-align: center;
+}
+
+.searchBarRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 624px;
+}
+
+.searchInputBox {
+  width: 461px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: #242528;
+}
+
+.searchInput::placeholder {
+  color: #82868e;
+}
+
+.filterBtn {
+  width: 147px;
+  height: 48px;
+  background: #d4fb20;
+  border-radius: 24px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #242528;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.filterBtn:hover {
+  transform: translateY(-1px);
+  background-color: #c4ec1a;
+}
+
+/* Body Section (Filter Bar, Categories, Course Grid, Pagination) */
+.bodySection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
+  position: relative;
+  width: 100%;
+  height: calc(2968px * var(--scale));
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.bodyStage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 2968px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+}
+
+/* Filter Bar at (119, 432 in Figma -> 72px from hero bottom) */
+.filterBar {
+  position: absolute;
+  left: 119px;
+  top: 72px;
+  width: 1201px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterLeft {
+  display: flex;
+  gap: 16px;
+}
+
+.filterPill,
+.relevantPill {
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #ced0d3;
+  border-radius: 24px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #4b4c53;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.filterPill:hover,
+.relevantPill:hover {
+  border-color: #003be2;
+  transform: translateY(-1px);
+}
+
+/* Category Tabs at (120, 512 in Figma -> 152px in bodyStage) */
+.categoryTabs {
+  position: absolute;
+  left: 120px;
+  top: 152px;
+  width: 1200px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.catTab {
+  height: 43px;
+  background: #f5f5f6;
+  border-radius: 24px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #4b4c53;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.catTab:hover {
+  transform: translateY(-1px);
+}
+
+.catTabActive {
+  background: #d4fb20;
+  color: #242528;
+}
+
+/* Course Grid at (121, 632 in Figma -> 272px in bodyStage) */
+.courseGrid {
+  position: absolute;
+  left: 121px;
+  top: 272px;
+  width: 1199px;
+  display: grid;
+  grid-template-columns: repeat(3, 373px);
+  gap: 40px;
+}
+
+/* Pagination at (588, 3208 in Figma -> 2848px in bodyStage) */
+.pagination {
+  position: absolute;
+  left: 588px;
+  top: 2848px;
+  width: 314px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pageArrow {
+  width: 56px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #ced0d3;
+  border-radius: 24px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pageArrow:hover {
+  border-color: #003be2;
+  transform: translateY(-1px);
+}
+
+.pageNum {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #242528;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  transition: color 0.2s ease;
+}
+
+.pageNum:hover {
+  color: #003be2;
+}
+
+.pageNumActive {
+  color: #ced0d3;
+}

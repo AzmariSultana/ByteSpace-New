@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className="container">
+      <div className={styles.footerContainer}>
         <div className={styles.footerNav}>
           {/* Left Column: Logo & Newsletter */}
           <div className={styles.newsletterCol}>
@@ -27,6 +27,7 @@ export default function Footer() {
                   alt="ByteSpace"
                   width={171}
                   height={35}
+                  priority
                 />
               </Link>
               <p className={styles.newsletterText}>
@@ -35,144 +36,140 @@ export default function Footer() {
               </p>
             </div>
 
-            <form onSubmit={handleSubscribe} className={styles.subscribeForm}>
-              <div className={styles.emailInputWrapper}>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className={styles.emailInput}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <button type="submit" className={styles.subscribeBtn}>
-                Search 
-              </button>
-            </form>
+            <div className={styles.formBlock}>
+              <form onSubmit={handleSubscribe} className={styles.subscribeForm}>
+                <div className={styles.emailInputWrapper}>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className={styles.emailInput}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className={styles.subscribeBtn}>
+                  Search
+                </button>
+              </form>
 
-            <p className={styles.privacyDisclaimer}>
-              By subscribing, you agree to our Privacy Policy and consent to
-              receive updates from our company.
-            </p>
+              <p className={styles.privacyDisclaimer}>
+                By subscribing, you agree to our Privacy Policy and consent to
+                receive updates from our company.
+              </p>
+            </div>
           </div>
 
-          {/* Right Columns: Links */}
+          {/* Right Columns: Links (No invisible/phantom headings) */}
           <div className={styles.linksWrapper}>
-            {/* Column 1: Browse */}
-            <div className={styles.linkCol}>
-              <h4 className={styles.colHeading}>Browse</h4>
-              <ul className={styles.linkList}>
-                <li>
-                  <Link href="#featured-courses" className={styles.footerLink}>
-                    Featured Courses
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#categories" className={styles.footerLink}>
-                    Featured Categories
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#business" className={styles.footerLink}>
-                    Business
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#it" className={styles.footerLink}>
-                    IT
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#design" className={styles.footerLink}>
-                    Design
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {/* Column 1 */}
+            <ul className={styles.linkList}>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Featured Courses
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Featured Categories
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Business
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  IT
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Design
+                </Link>
+              </li>
+            </ul>
 
-            {/* Column 2: Continuation */}
-            <div className={styles.linkCol}>
-              <div className={styles.colHeadingPlaceholder} />
-              <ul className={styles.linkList}>
-                <li>
-                  <Link href="#development" className={styles.footerLink}>
-                    Development
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#marketing" className={styles.footerLink}>
-                    Marketing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#photography" className={styles.footerLink}>
-                    Photography
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#finance" className={styles.footerLink}>
-                    Finance
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#sport" className={styles.footerLink}>
-                    Sport
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {/* Column 2 */}
+            <ul className={styles.linkList}>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Marketing
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Photography
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Finance
+                </Link>
+              </li>
+              <li>
+                <Link href="/search" className={styles.footerLink}>
+                  Sport
+                </Link>
+              </li>
+            </ul>
 
-            {/* Column 3: Platform */}
-            <div className={styles.linkCol}>
-              <h4 className={styles.colHeading}>Platform</h4>
-              <ul className={styles.linkList}>
-                <li>
-                  <Link href="#become-creator" className={styles.footerLink}>
-                    Become a Creator
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#affiliate" className={styles.footerLink}>
-                    Affiliate Program
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#contact" className={styles.footerLink}>
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#help" className={styles.footerLink}>
-                    Help
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#about" className={styles.footerLink}>
-                    About
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {/* Column 3 */}
+            <ul className={styles.linkList}>
+              <li>
+                <Link href="/creator-profile" className={styles.footerLink}>
+                  Become a Creator
+                </Link>
+              </li>
+              <li>
+                <Link href="/course-details" className={styles.footerLink}>
+                  Affiliate Program
+                </Link>
+              </li>
+              <li>
+                <Link href="/login" className={styles.footerLink}>
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/register" className={styles.footerLink}>
+                  Help
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className={styles.footerLink}>
+                  About
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Copyright Row */}
-        <div className={styles.copyrightRow}>
-          <p className={styles.copyrightText}>
-            @ 2023 ByteSpace. All rights reserved.
-          </p>
+        {/* Divider & Copyright Section */}
+        <div className={styles.copyrightSection}>
+          <div className={styles.dividerLine} />
+          <div className={styles.copyrightRow}>
+            <p className={styles.copyrightText}>
+              @ 2023 ByteSpace. All rights reserved.
+            </p>
 
-          <div className={styles.legalLinks}>
-            <Link href="#privacy" className={styles.legalLink}>
-              Privacy Policy
-            </Link>
-            <Link href="#terms" className={styles.legalLink}>
-              Terms of Service
-            </Link>
-            <Link href="#cookies" className={styles.legalLink}>
-              Cookies Settings
-            </Link>
+            <div className={styles.legalLinks}>
+              <Link href="/privacy" className={styles.legalLink}>
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className={styles.legalLink}>
+                Terms of Service
+              </Link>
+              <Link href="/cookies" className={styles.legalLink}>
+                Cookies Settings
+              </Link>
+            </div>
           </div>
         </div>
       </div>

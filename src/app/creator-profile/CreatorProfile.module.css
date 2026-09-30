@@ -1,0 +1,248 @@
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* Hero Section (1440 x 592) */
+.heroSection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
+  position: relative;
+  width: 100%;
+  height: calc(592px * var(--scale));
+  overflow: hidden;
+  background-color: #003be2;
+}
+
+.heroStage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 592px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+}
+
+/* Creator Header Content at (122, 172) */
+.creatorHeaderContent {
+  position: absolute;
+  left: 122px;
+  top: 172px;
+  width: 1198px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 10;
+}
+
+.creatorBioRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatarWrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.creatorAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creatorTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.creatorName {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43.2px;
+  color: #f5f5f6;
+}
+
+.creatorBadge {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #d4fb20;
+  background: rgba(212, 251, 32, 0.15);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.creatorTagline {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #f5f5f6;
+}
+
+.creatorBio {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28.8px;
+  color: #f5f5f6;
+  max-width: 1197px;
+}
+
+.statsActionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1198px;
+  margin-top: 16px;
+}
+
+.statsGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statPill {
+  height: 46px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+
+.statNum {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #003be2;
+}
+
+.statLabel {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #242528;
+}
+
+.followBtn {
+  width: 101px;
+  height: 46px;
+  background: #d4fb20;
+  border-radius: 24px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #040819;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.followBtn:hover {
+  transform: translateY(-1px);
+  background-color: #c4ec1a;
+}
+
+/* Courses Section (1440 x 1019) */
+.coursesSection {
+  --scale: calc(min(100vw, 1440px) / 1440px);
+  position: relative;
+  width: 100%;
+  height: calc(1019px * var(--scale));
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.coursesStage {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1440px;
+  height: 1019px;
+  transform: translateX(-50%) scale(var(--scale));
+  transform-origin: top center;
+}
+
+/* Filter Bar at (119, 654 -> 62px in stage) */
+.filterBar {
+  position: absolute;
+  left: 119px;
+  top: 62px;
+  width: 1201px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterLeft {
+  display: flex;
+  gap: 16px;
+}
+
+.filterPill,
+.relevantPill {
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #ced0d3;
+  border-radius: 24px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #4b4c53;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.filterPill:hover,
+.relevantPill:hover {
+  border-color: #003be2;
+  transform: translateY(-1px);
+}
+
+/* Course Grid at (119, 742 -> 150px in stage) */
+.courseGrid {
+  position: absolute;
+  left: 119px;
+  top: 150px;
+  width: 1199px;
+  display: grid;
+  grid-template-columns: repeat(3, 373px);
+  gap: 40px;
+}
