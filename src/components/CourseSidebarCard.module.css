@@ -1,0 +1,254 @@
+.sidebarCard {
+  width: 412px;
+  background: #ffffff;
+  border: 1px solid #ced0d3;
+  border-radius: 24px;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.sectionTop {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.lessonCountHeader {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #242528;
+}
+
+.previewVideoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.videoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+}
+
+.videoLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.playIconSmall {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f5f5f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoTitle {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #4b4c53;
+}
+
+.videoDuration {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #82868e;
+}
+
+.moreVideosText {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #4b4c53;
+}
+
+/* CTA */
+.ctaSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ctaPrompt {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #4b4c53;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.priceAmount {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43.2px;
+  color: #003be2;
+}
+
+.priceLifetime {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #4b4c53;
+}
+
+.enrollBtn {
+  width: 332px;
+  height: 46px;
+  background: #d4fb20;
+  border-radius: 24px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #242528;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.enrollBtn:hover {
+  transform: translateY(-1px);
+  background-color: #c4ec1a;
+}
+
+/* Includes */
+.includesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.includesTitle {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #242528;
+}
+
+.includesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.includeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.includeText {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #4b4c53;
+}
+
+.divider {
+  width: 332px;
+  height: 1px;
+  background: #e5e6e8;
+}
+
+/* Creator */
+.creatorProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.creatorHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.creatorAvatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.creatorMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.creatorName {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #242528;
+}
+
+.creatorRole {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #82868e;
+}
+
+.creatorBio {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #4b4c53;
+}
+
+.profileBtn {
+  width: 139px;
+  height: 35px;
+  border: 1px solid #ced0d3;
+  border-radius: 24px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #4b4c53;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.profileBtn:hover {
+  border-color: #003be2;
+  transform: translateY(-1px);
+}

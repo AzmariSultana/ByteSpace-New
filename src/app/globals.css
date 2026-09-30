@@ -37,15 +37,29 @@
 }
 
 html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #ced0d3 transparent;
 }
 
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ced0d3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #abaeb5;
 }
 
 body {
@@ -56,6 +70,11 @@ body {
   font-family: var(--font-satoshi);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 a {

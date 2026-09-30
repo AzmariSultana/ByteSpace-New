@@ -5,11 +5,6 @@
   height: calc(1024px * var(--scale));
   overflow: hidden;
   background-color: #003be2;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.12) 2px, transparent 2px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
-  background-size: calc(120px * var(--scale)) calc(120px * var(--scale));
-  background-position: calc(50% - 720px * var(--scale)) 0;
 }
 
 .heroStage {
@@ -270,14 +265,14 @@
 
 .badgeStudents {
   position: absolute;
-  left: 330px;
-  top: 852px;
+  left: 328px;
+  top: 837px;
   width: 258px;
   height: 121px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 14px 16px;
+  padding: 16px;
   box-sizing: border-box;
   text-align: left;
   z-index: 5;
@@ -298,7 +293,15 @@
   margin-top: 2px;
 }
 
-.ratingText {
+.ratingScore {
+  font-family: var(--font-satoshi);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 19.2px;
+  color: #242528;
+}
+
+.ratingCount {
   font-family: var(--font-satoshi);
   font-weight: 400;
   font-size: 12px;
@@ -361,56 +364,56 @@
   object-fit: contain;
 }
 
-/* 1. Top-Left Lime Coil */
+/* 1. Top-Left Lime Spring (Figma Frame 46:90: x: -118, y: 221, w: 385, h: 385) */
 .ornamentTopLeft {
-  left: 0;
-  top: 285px;
-  width: 195px;
-  height: 267px;
+  left: -118px;
+  top: 221px;
+  width: 385px;
+  height: 385px;
   z-index: 2;
 }
 
-/* 2. Mid-Left White Squiggle */
+/* 2. Mid-Left White Squiggle (Figma Frame 46:95: x: 183, y: 477, w: 175, h: 175) */
 .ornamentMidLeft {
-  left: 216px;
-  top: 506px;
-  width: 114px;
-  height: 121px;
+  left: 183px;
+  top: 477px;
+  width: 175px;
+  height: 175px;
   z-index: 2;
 }
 
-/* 3. Bottom-Left White Torus */
+/* 3. Bottom-Left White Torus (Figma Cone 46:105: x: 18, y: 682, w: 342, h: 342) */
 .ornamentBottomLeft {
-  left: 45px;
-  top: 756px;
-  width: 315px;
-  height: 230px;
-  z-index: 3;
+  left: 18px;
+  top: 682px;
+  width: 342px;
+  height: 342px;
+  z-index: 2;
 }
 
-/* 4. Top-Right Lime Cylinder */
+/* 4. Top-Right Lime Cylinder (Figma Cone 46:110: x: 1231, y: 221, w: 370, h: 370) */
 .ornamentTopRight {
-  right: 0;
-  top: 264px;
-  width: 152px;
-  height: 302px;
+  left: 1231px;
+  top: 221px;
+  width: 370px;
+  height: 370px;
   z-index: 2;
 }
 
-/* 5. Mid-Right White Tetrahedron */
+/* 5. Mid-Right White Tetrahedron (Figma Cone 46:80: x: 1106, y: 464, w: 188, h: 188) */
 .ornamentMidRight {
-  left: 1132px;
-  top: 485px;
-  width: 122px;
-  height: 136px;
+  left: 1106px;
+  top: 464px;
+  width: 188px;
+  height: 188px;
   z-index: 2;
 }
 
-/* 6. Bottom-Right White Coil */
+/* 6. Bottom-Right White Coil (Figma Frame 46:85: x: 1127, y: 672, w: 330, h: 330) */
 .ornamentBottomRight {
-  left: 1208px;
-  top: 724px;
-  width: 190px;
-  height: 250px;
-  z-index: 3;
+  left: 1127px;
+  top: 672px;
+  width: 330px;
+  height: 330px;
+  z-index: 2;
 }
