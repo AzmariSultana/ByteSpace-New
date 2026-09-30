@@ -24,13 +24,11 @@ export default function LoginPage() {
         {/* Header Logo */}
         <header className={styles.header}>
           <Link href="/" className={styles.logo} aria-label="ByteSpace Home">
-            <Image
-              src="/assets/svgs/logo.svg"
-              alt="ByteSpace"
-              width={171}
-              height={37}
-              priority
-            />
+            <svg width="29" height="32" viewBox="0 0 29 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.5479 10.5479C10.5479 4.72245 5.82544 0 0 0V21.0958C0 26.9212 4.72245 31.6437 10.5479 31.6437V10.5479Z" fill="#D4FB20"/>
+              <path d="M18.4588 10.5479C24.2842 10.5479 29.0067 15.2703 29.0067 21.0958H21.0958C15.2703 21.0958 10.5479 16.3733 10.5479 10.5479L18.4588 10.5479Z" fill="#D4FB20"/>
+              <path d="M18.4588 31.6437C24.2842 31.6437 29.0067 26.9212 29.0067 21.0958H21.0958C15.2703 21.0958 10.5479 25.8182 10.5479 31.6437L18.4588 31.6437Z" fill="#D4FB20"/>
+            </svg>
           </Link>
         </header>
 
@@ -70,10 +68,10 @@ export default function LoginPage() {
         {/* White 3D Spring (49:330) */}
         <div className={styles.sphereOrnament}>
           <Image
-            src="/assets/images/figma_e3b55902d605bfc37a0809e6dc6dfe61b6701897.png"
+            src="/assets/images/login-spring-white.png"
             alt=""
-            width={175}
-            height={175}
+            width={182}
+            height={182}
             priority
             unoptimized
           />
@@ -100,7 +98,7 @@ export default function LoginPage() {
             <div className={styles.cardHeaderRow}>
               <div>
                 <h3 className={styles.cardTitle}>Build Digital Asset</h3>
-                <p className={styles.cardAuthor}>by purepearl studio</p>
+                <p className={styles.cardAuthor}>by <span className={styles.studioText}>purepearl studio</span></p>
               </div>
               <div className={styles.ratingBadge}>
                 <span className={styles.ratingText}>4.5 </span>
@@ -133,6 +131,9 @@ export default function LoginPage() {
                 </div>
                 <div className={styles.stackAvatar}>
                   <Image src="/assets/images/figma_d0cd3adb501c64c1b4cf766de6abb9fe8925fb5f.png" alt="" width={32} height={32} />
+                </div>
+                <div className={styles.avatarMore}>
+                  <span>26+</span>
                 </div>
               </div>
             </div>
@@ -165,7 +166,7 @@ export default function LoginPage() {
             <div className={styles.cardHeaderRow}>
               <div>
                 <h3 className={styles.cardTitle}>the Power of Big Data</h3>
-                <p className={styles.cardAuthor}>by purepearl studio</p>
+                <p className={styles.cardAuthor}>by <span className={styles.studioText}>purepearl studio</span></p>
               </div>
               <div className={styles.ratingBadge}>
                 <span className={styles.ratingText}>4.5 </span>
@@ -199,6 +200,9 @@ export default function LoginPage() {
                 <div className={styles.stackAvatar}>
                   <Image src="/assets/images/figma_d0cd3adb501c64c1b4cf766de6abb9fe8925fb5f.png" alt="" width={32} height={32} />
                 </div>
+                <div className={styles.avatarMore}>
+                  <span>26+</span>
+                </div>
               </div>
             </div>
 
@@ -214,7 +218,9 @@ export default function LoginPage() {
           <div className={styles.happyCardTop}>
             <span className={styles.happyTitle}>Happy Students</span>
             <div className={styles.happyRatingRow}>
-              <span className={styles.happyRatingText}>4.5 (240)</span>
+              <span className={styles.happyRatingText}>
+                <span className={styles.happyRatingScore}>4.5</span> (240)
+              </span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   d="M8 1L10.23 5.52L15.22 6.24L11.61 9.75L12.46 14.72L8 12.38L3.54 14.72L4.39 9.75L0.78 6.24L5.77 5.52L8 1Z"
@@ -290,35 +296,20 @@ export default function LoginPage() {
               </div>
 
               <div className={styles.socialButtonsRow}>
-                {/* Google Icon */}
-                <button type="button" className={styles.socialBtn} aria-label="Sign in with Google">
-                  <svg width="33" height="33" viewBox="0 0 33 33" fill="none">
-                    <path
-                      d="M32.8 16.85C32.8 15.68 32.7 14.54 32.51 13.45H16.73V19.86H25.75C25.35 21.95 24.14 23.73 22.33 24.94V29.17H27.84C31.06 26.2 32.8 21.84 32.8 16.85Z"
-                      fill="#4285F4"
-                    />
-                    <path
-                      d="M16.73 33.25C21.24 33.25 25.03 31.76 27.84 29.17L22.33 24.94C20.8 25.96 18.86 26.58 16.73 26.58C12.38 26.58 8.69 23.64 7.37 19.68H1.67V24.09C4.54 29.79 10.23 33.25 16.73 33.25Z"
-                      fill="#34A853"
-                    />
-                    <path
-                      d="M7.37 19.68C7.03 18.68 6.84 17.61 6.84 16.5C6.84 15.39 7.03 14.32 7.37 13.32V8.91H1.67C0.61 11.02 0 13.69 0 16.5C0 19.31 0.61 21.98 1.67 24.09L7.37 19.68Z"
-                      fill="#FBBC05"
-                    />
-                    <path
-                      d="M16.73 6.42C19.19 6.42 21.39 7.26 23.12 8.92L28 4.04C25.02 1.26 21.23 0 16.73 0C10.23 0 4.54 3.46 1.67 9.16L7.37 13.57C8.69 9.61 12.38 6.42 16.73 6.42Z"
-                      fill="#EA4335"
-                    />
+                {/* Facebook Icon */}
+                <button type="button" className={styles.socialBtn} aria-label="Sign in with Facebook">
+                  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M17 0C7.61 0 0 7.61 0 17C0 25.49 6.22 32.53 14.34 33.81V21.93H10.03V17H14.34V13.25C14.34 8.99 16.88 6.63 20.77 6.63C22.63 6.63 24.58 6.96 24.58 6.96V11.16H22.43C20.32 11.16 19.66 12.47 19.66 13.82V17H24.39L23.63 21.93H19.66V33.81C27.78 32.53 34 25.49 34 17C34 7.61 26.39 0 17 0Z" fill="#000000"/>
                   </svg>
                 </button>
 
-                {/* Apple Icon */}
-                <button type="button" className={styles.socialBtn} aria-label="Sign in with Apple">
-                  <svg width="33" height="33" viewBox="0 0 33 33" fill="none">
-                    <path
-                      d="M26.4 17.5C26.37 13.88 29.32 12.12 29.45 12.04C27.76 9.58 25.13 9.24 24.21 9.2C21.97 8.98 19.82 10.51 18.68 10.51C17.54 10.51 15.77 9.23 13.9 9.26C11.47 9.3 9.22 10.68 7.97 12.85C5.45 17.22 7.33 23.69 9.77 27.21C10.96 28.93 12.38 30.86 14.25 30.79C16.05 30.72 16.73 29.63 18.91 29.63C21.08 29.63 21.7 30.79 23.59 30.75C25.51 30.72 26.73 28.99 27.91 27.27C29.28 25.27 29.84 23.32 29.88 23.21C29.84 23.19 26.43 21.89 26.4 17.5ZM21.94 6.77C22.92 5.58 23.58 3.93 23.4 2.27C21.98 2.33 20.26 3.22 19.24 4.41C18.33 5.46 17.53 7.15 17.74 8.77C19.32 8.89 20.96 7.96 21.94 6.77Z"
-                      fill="#000000"
-                    />
+                {/* Google Icon */}
+                <button type="button" className={styles.socialBtn} aria-label="Sign in with Google">
+                  <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32.625 16.85C32.625 15.68 32.525 14.54 32.335 13.45H16.555V19.86H25.575C25.175 21.95 23.965 23.73 22.155 24.94V29.17H27.665C30.885 26.2 32.625 21.84 32.625 16.85Z" fill="#000000"/>
+                    <path d="M16.555 33.25C21.065 33.25 24.855 31.76 27.665 29.17L22.155 24.94C20.625 25.96 18.685 26.58 16.555 26.58C12.205 26.58 8.515 23.64 7.195 19.68H1.495V24.09C4.365 29.79 10.055 33.25 16.555 33.25Z" fill="#000000"/>
+                    <path d="M7.195 19.68C6.855 18.68 6.665 17.61 6.665 16.5C6.665 15.39 6.855 14.32 7.195 13.32V8.91H1.495C0.435 11.02 -0.175 13.69 -0.175 16.5C-0.175 19.31 0.435 21.98 1.495 24.09L7.195 19.68Z" fill="#000000"/>
+                    <path d="M16.555 6.42C19.015 6.42 21.215 7.26 22.945 8.92L27.825 4.04C24.845 1.26 21.055 0 16.555 0C10.055 0 4.365 3.46 1.495 9.16L7.195 13.57C8.515 9.61 12.205 6.42 16.555 6.42Z" fill="#000000"/>
                   </svg>
                 </button>
               </div>

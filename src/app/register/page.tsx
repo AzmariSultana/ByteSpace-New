@@ -25,13 +25,11 @@ export default function RegisterPage() {
         {/* Header Logo */}
         <header className={styles.header}>
           <Link href="/" className={styles.logo} aria-label="ByteSpace Home">
-            <Image
-              src="/assets/svgs/logo.svg"
-              alt="ByteSpace"
-              width={171}
-              height={37}
-              priority
-            />
+            <svg width="29" height="32" viewBox="0 0 29 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.5479 10.5479C10.5479 4.72245 5.82544 0 0 0V21.0958C0 26.9212 4.72245 31.6437 10.5479 31.6437V10.5479Z" fill="#D4FB20"/>
+              <path d="M18.4588 10.5479C24.2842 10.5479 29.0067 15.2703 29.0067 21.0958H21.0958C15.2703 21.0958 10.5479 16.3733 10.5479 10.5479L18.4588 10.5479Z" fill="#D4FB20"/>
+              <path d="M18.4588 31.6437C24.2842 31.6437 29.0067 26.9212 29.0067 21.0958H21.0958C15.2703 21.0958 10.5479 25.8182 10.5479 31.6437L18.4588 31.6437Z" fill="#D4FB20"/>
+            </svg>
           </Link>
         </header>
 
@@ -71,10 +69,10 @@ export default function RegisterPage() {
         {/* White 3D Spring (49:180) */}
         <div className={styles.sphereOrnament}>
           <Image
-            src="/assets/images/figma_e3b55902d605bfc37a0809e6dc6dfe61b6701897.png"
+            src="/assets/images/login-spring-white.png"
             alt=""
-            width={175}
-            height={175}
+            width={182}
+            height={182}
             priority
             unoptimized
           />
@@ -101,7 +99,7 @@ export default function RegisterPage() {
             <div className={styles.cardHeaderRow}>
               <div>
                 <h3 className={styles.cardTitle}>Build Digital Asset</h3>
-                <p className={styles.cardAuthor}>by purepearl studio</p>
+                <p className={styles.cardAuthor}>by <span className={styles.studioText}>purepearl studio</span></p>
               </div>
               <div className={styles.ratingBadge}>
                 <span className={styles.ratingText}>4.5 </span>
@@ -134,6 +132,9 @@ export default function RegisterPage() {
                 </div>
                 <div className={styles.stackAvatar}>
                   <Image src="/assets/images/figma_d0cd3adb501c64c1b4cf766de6abb9fe8925fb5f.png" alt="" width={32} height={32} />
+                </div>
+                <div className={styles.avatarMore}>
+                  <span>26+</span>
                 </div>
               </div>
             </div>
@@ -166,7 +167,7 @@ export default function RegisterPage() {
             <div className={styles.cardHeaderRow}>
               <div>
                 <h3 className={styles.cardTitle}>the Power of Big Data</h3>
-                <p className={styles.cardAuthor}>by purepearl studio</p>
+                <p className={styles.cardAuthor}>by <span className={styles.studioText}>purepearl studio</span></p>
               </div>
               <div className={styles.ratingBadge}>
                 <span className={styles.ratingText}>4.5 </span>
@@ -200,6 +201,9 @@ export default function RegisterPage() {
                 <div className={styles.stackAvatar}>
                   <Image src="/assets/images/figma_d0cd3adb501c64c1b4cf766de6abb9fe8925fb5f.png" alt="" width={32} height={32} />
                 </div>
+                <div className={styles.avatarMore}>
+                  <span>26+</span>
+                </div>
               </div>
             </div>
 
@@ -215,7 +219,9 @@ export default function RegisterPage() {
           <div className={styles.happyCardTop}>
             <span className={styles.happyTitle}>Happy Students</span>
             <div className={styles.happyRatingRow}>
-              <span className={styles.happyRatingText}>4.5 (240)</span>
+              <span className={styles.happyRatingText}>
+                <span className={styles.happyRatingScore}>4.5</span> (240)
+              </span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   d="M8 1L10.23 5.52L15.22 6.24L11.61 9.75L12.46 14.72L8 12.38L3.54 14.72L4.39 9.75L0.78 6.24L5.77 5.52L8 1Z"

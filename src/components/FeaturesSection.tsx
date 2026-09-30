@@ -129,19 +129,7 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* 2. Lime Spring Ornament behind the Learning Progress card */}
-          <div className={styles.springBoyWrapper}>
-            <Image
-              src="/assets/images/feature-spring-boy.png"
-              alt="Decorative spring ornament"
-              width={215}
-              height={215}
-              className={styles.springBoyImg}
-              priority
-            />
-          </div>
-
-          {/* 3. The Boy with Laptop */}
+          {/* 2. The Boy with Laptop */}
           <div className={styles.boyImageWrapper}>
             <Image
               src="/assets/images/hero-student.png"
@@ -153,13 +141,26 @@ export default function FeaturesSection() {
             />
           </div>
 
-          {/* 4. Floating Learning Progress Badge */}
+          {/* 3. Floating Learning Progress Badge */}
           <div className={styles.progressBadge}>
             <span className={styles.progressBadgeTitle}>Learning Progress</span>
             <span className={styles.progressBadgeValue}>55%</span>
             <div className={styles.progressTrack}>
               <div className={styles.progressBar} />
             </div>
+          </div>
+
+          {/* 4. Lime Spring Ornament over the Learning Progress card */}
+          <div className={styles.springBoyWrapper}>
+            <Image
+              src="/assets/images/feature-spring-boy.png"
+              alt="Decorative spring ornament"
+              width={215}
+              height={215}
+              className={styles.springBoyImg}
+              unoptimized
+              priority
+            />
           </div>
         </div>
 
@@ -200,6 +201,7 @@ export default function FeaturesSection() {
               width={215}
               height={215}
               className={styles.springGirlImg}
+              unoptimized
               priority
             />
           </div>
