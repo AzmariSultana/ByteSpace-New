@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./CoursesSection.module.css";
 
 const row1Tabs = [
@@ -230,16 +231,21 @@ export default function CoursesSection() {
                 {tab}
               </button>
             ))}
-            <button type="button" className={styles.moreLink}>
+            <Link href="/search" className={styles.moreLink}>
               + More
-            </button>
+            </Link>
           </div>
         </div>
 
         {/* Course Cards Grid (Frame 8 / 33:683: 1199x808 at relX:120.5, relY:542) */}
         <div className={styles.coursesGrid}>
           {courses.map((course) => (
-            <article key={course.id} className={styles.courseCard}>
+            <Link
+              key={course.id}
+              href="/course-details"
+              className={styles.courseCard}
+              aria-label={course.title}
+            >
               {/* Card Thumbnail (341x195 at relX:136, relY:486) */}
               <div className={styles.thumbnailWrapper}>
                 <Image
@@ -331,7 +337,7 @@ export default function CoursesSection() {
                   <span className={styles.priceUnit}>{course.priceUnit}</span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
