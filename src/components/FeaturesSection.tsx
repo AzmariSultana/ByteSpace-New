@@ -23,15 +23,6 @@ export default function FeaturesSection() {
   return (
     <section className={styles.featuresSection} aria-label="Why Choose ByteSpace">
       <div className={styles.featuresStage}>
-        {/* Background Ambient Radial Glows (Figma Group 5 & Ellipse 12) */}
-        <div className={styles.bgGlows} aria-hidden="true">
-          <div className={styles.glowTopLeft} />
-          <div className={styles.glowTopRight} />
-          <div className={styles.glowMidLeft} />
-          <div className={styles.glowBottomRight} />
-          <div className={styles.glowBottomLeft} />
-        </div>
-
         {/* ================= ROW 1 ================= */}
         {/* Left Text Block 1 (relX: 121px, relY: 194px) */}
         <div className={styles.textContent1}>
@@ -70,7 +61,9 @@ export default function FeaturesSection() {
                 src="/assets/images/course-1.png"
                 alt="Learn Figma from Basic"
                 fill
+                sizes="341px"
                 className={styles.cardThumbnailImg}
+                priority
               />
               <div className={styles.cardThumbnailBadges}>
                 <span className={styles.thumbnailBadge}>17 Lessons</span>
@@ -136,7 +129,7 @@ export default function FeaturesSection() {
             </div>
           </div>
 
-          {/* 2. Lime Spring Ornament behind the boy */}
+          {/* 2. Lime Spring Ornament behind the Learning Progress card */}
           <div className={styles.springBoyWrapper}>
             <Image
               src="/assets/images/feature-spring-boy.png"
@@ -144,6 +137,7 @@ export default function FeaturesSection() {
               width={215}
               height={215}
               className={styles.springBoyImg}
+              priority
             />
           </div>
 
@@ -180,7 +174,6 @@ export default function FeaturesSection() {
             </div>
             <div className={styles.revenueBadgeValueRow}>
               <span className={styles.revenueBadgeValue}>$120.29</span>
-              <span className={styles.revenueBadgePill}>+12$</span>
             </div>
             <div className={styles.revenueProgressTrack}>
               <div className={styles.revenueProgressBar} />
@@ -207,6 +200,7 @@ export default function FeaturesSection() {
               width={215}
               height={215}
               className={styles.springGirlImg}
+              priority
             />
           </div>
 
@@ -268,46 +262,34 @@ export default function FeaturesSection() {
 
           <div className={styles.checklist}>
             <div className={styles.checkItem}>
-              <Image
-                src="/assets/svgs/check-circle.svg"
-                alt="Checked"
-                width={24}
-                height={24}
-                className={styles.checkIcon}
-              />
+              <svg className={styles.checkIcon} viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="#003be2" />
+                <path d="M8.2 12.2L10.7 14.7L16 9.4" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
               <span className={styles.checkText}>Share Your Expertise</span>
             </div>
 
             <div className={styles.checkItem}>
-              <Image
-                src="/assets/svgs/check-circle.svg"
-                alt="Checked"
-                width={24}
-                height={24}
-                className={styles.checkIcon}
-              />
+              <svg className={styles.checkIcon} viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="#003be2" />
+                <path d="M8.2 12.2L10.7 14.7L16 9.4" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
               <span className={styles.checkText}>Monetize Your Passion</span>
             </div>
 
             <div className={styles.checkItem}>
-              <Image
-                src="/assets/svgs/check-circle.svg"
-                alt="Checked"
-                width={24}
-                height={24}
-                className={styles.checkIcon}
-              />
+              <svg className={styles.checkIcon} viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="#003be2" />
+                <path d="M8.2 12.2L10.7 14.7L16 9.4" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
               <span className={styles.checkText}>Flexibility and Autonomy</span>
             </div>
 
             <div className={styles.checkItem}>
-              <Image
-                src="/assets/svgs/check-circle.svg"
-                alt="Checked"
-                width={24}
-                height={24}
-                className={styles.checkIcon}
-              />
+              <svg className={styles.checkIcon} viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="#003be2" />
+                <path d="M8.2 12.2L10.7 14.7L16 9.4" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
               <span className={styles.checkText}>Build a Community</span>
             </div>
           </div>
