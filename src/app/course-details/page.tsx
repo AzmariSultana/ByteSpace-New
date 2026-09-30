@@ -83,9 +83,9 @@ export default function CourseDetailsPage() {
             <div className={styles.keyPointsList}>
               {KEY_POINTS.map((point, idx) => (
                 <div key={idx} className={styles.keyPointRow}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="9" stroke="#242528" strokeWidth="2" />
-                    <path d="M8.5 12L10.5 14L15.5 9" stroke="#242528" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" fill="#003be2" />
+                    <path d="M8.2 12.2L10.7 14.7L16 9.4" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <span className={styles.pointText}>{point}</span>
                 </div>

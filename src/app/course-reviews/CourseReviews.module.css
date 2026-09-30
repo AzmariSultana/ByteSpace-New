@@ -2,9 +2,15 @@
   --scale: calc(min(100vw, 1440px) / 1440px);
   position: relative;
   width: 100%;
-  height: calc(3449px * var(--scale));
+  height: calc(3500px * var(--scale));
   overflow: hidden;
-  background-color: #ffffff;
+  background: linear-gradient(
+    to bottom,
+    #003be2 0px,
+    #003be2 calc(957px * var(--scale)),
+    #ffffff calc(957px * var(--scale)),
+    #ffffff 100%
+  );
 }
 
 .stage {
@@ -12,7 +18,7 @@
   left: 50%;
   top: 0;
   width: 1440px;
-  height: 3449px;
+  height: 3500px;
   transform: translateX(-50%) scale(var(--scale));
   transform-origin: top center;
 }
@@ -84,76 +90,71 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   flex-shrink: 0;
+}
+
+.ratingsLabel {
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16.8px;
+  color: #242528;
 }
 
 .scoreNumber {
   font-family: var(--font-poppins), sans-serif;
   font-weight: 600;
-  font-size: 44px;
-  line-height: 50px;
-  color: #242528;
-}
-
-.scoreStars {
-  display: flex;
-  gap: 4px;
-}
-
-.scoreCount {
-  font-family: var(--font-satoshi), sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 36px;
+  line-height: 43.2px;
   color: #242528;
 }
 
 .ratingBarsList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  flex-grow: 1;
+  gap: 4px;
+  width: 490px;
 }
 
 .barRow {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.starLabel {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  width: 32px;
-  font-family: var(--font-satoshi), sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #242528;
+  gap: 16px;
+  height: 26px;
 }
 
 .barTrack {
-  flex-grow: 1;
+  width: 282px;
   height: 8px;
-  background-color: #f5f5f6;
+  background-color: #e5e6e8;
   border-radius: 24px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .barFill {
   height: 100%;
-  background-color: #003be2;
+  background-color: #d4fb20;
   border-radius: 24px;
 }
 
+.rowStars {
+  display: flex;
+  gap: 4px;
+  width: 136px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .barCount {
-  width: 32px;
-  text-align: right;
+  width: 40px;
   font-family: var(--font-satoshi), sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  color: #82868e;
+  font-size: 16px;
+  line-height: 25.6px;
+  color: #4b4c53;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 /* Filter Section */
@@ -170,7 +171,7 @@
 }
 
 .filterPill {
-  height: 43px;
+  height: 48px;
   background: #f5f5f6;
   border-radius: 24px;
   padding: 12px 16px;
@@ -184,6 +185,7 @@
   align-items: center;
   gap: 4px;
   cursor: pointer;
+  border: none;
   transition: all 0.2s ease;
 }
 
@@ -221,10 +223,16 @@
   align-items: flex-start;
 }
 
-.reviewerMeta {
+.reviewerMetaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reviewerProfile {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .reviewerAvatar {
@@ -240,39 +248,33 @@
 }
 
 .reviewerName {
-  font-family: var(--font-poppins), sans-serif;
-  font-weight: 600;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 22px;
   color: #242528;
 }
 
 .reviewerRole {
   font-family: var(--font-satoshi), sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #82868e;
-}
-
-.reviewerRatingCol {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4b4c53;
 }
 
 .starsRow {
   display: flex;
   gap: 4px;
+  align-items: center;
 }
 
 .reviewDate {
   font-family: var(--font-satoshi), sans-serif;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: #82868e;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4b4c53;
 }
 
 .reviewBody {
@@ -290,4 +292,25 @@
   top: 2924px;
   width: 1440px;
   z-index: 10;
+}
+
+.footerWrapper div[class*="footerNav"] {
+  flex-direction: row;
+}
+
+.footerWrapper div[class*="newsletterCol"] {
+  width: 528px;
+}
+
+.footerWrapper div[class*="linksWrapper"] {
+  width: 580px;
+  margin-top: 48px;
+}
+
+.footerWrapper div[class*="copyrightSection"] {
+  margin-top: 130px;
+}
+
+.footerWrapper div[class*="copyrightRow"] {
+  flex-direction: row;
 }

@@ -58,7 +58,16 @@ export default function CourseCard({
         <div className={styles.headerRow}>
           <div className={styles.titleCol}>
             <h3 className={styles.title}>{title}</h3>
-            <p className={styles.author}>{author}</p>
+            {(() => {
+              const isBy = author.toLowerCase().startsWith("by ");
+              const name = isBy ? author.slice(3) : author;
+              return (
+                <p className={styles.author}>
+                  {isBy ? "by " : ""}
+                  <span className={styles.authorName}>{name}</span>
+                </p>
+              );
+            })()}
           </div>
           <div className={styles.ratingBadge}>
             <span className={styles.ratingText}>{rating} </span>
@@ -93,6 +102,7 @@ export default function CourseCard({
             <div className={styles.stackAvatar}>
               <Image src="/assets/images/figma_d0cd3adb501c64c1b4cf766de6abb9fe8925fb5f.png" alt="" width={32} height={32} unoptimized />
             </div>
+            <div className={styles.stackCount}>26+</div>
           </div>
         </div>
 

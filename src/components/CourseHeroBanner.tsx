@@ -16,47 +16,6 @@ export default function CourseHeroBanner() {
         {/* Grid Background */}
         <GridBackground height={957} width={1440} />
 
-        {/* 3D Floating Ornaments */}
-        <div className={styles.ornamentTopLeft}>
-          <Image
-            src="/assets/images/figma_f1057d714a93edf29b02a9dbdb4fc552fd7ab847.png"
-            alt=""
-            width={332}
-            height={331}
-            priority
-            unoptimized
-          />
-        </div>
-        <div className={styles.ornamentBottomLeft}>
-          <Image
-            src="/assets/images/figma_6be36b89bfec399afb445a39d9bf4cb181332d48.png"
-            alt=""
-            width={188}
-            height={188}
-            priority
-            unoptimized
-          />
-        </div>
-        <div className={styles.ornamentTopRight}>
-          <Image
-            src="/assets/images/figma_d5e9c4dc379dbf3d1f6679a4423483f6766a7931.png"
-            alt=""
-            width={222}
-            height={222}
-            priority
-            unoptimized
-          />
-        </div>
-        <div className={styles.ornamentBottomRight}>
-          <Image
-            src="/assets/images/figma_24321b8894c48b04befaa9e71f204daacc40bbc4.png"
-            alt=""
-            width={357}
-            height={356}
-            priority
-            unoptimized
-          />
-        </div>
 
         {/* Course Header Info at (122, 172) */}
         <div className={styles.courseHeaderInfo}>
@@ -69,46 +28,48 @@ export default function CourseHeroBanner() {
                 Unlock the Power of Digital Creation with Expert Guidance
               </p>
             </div>
-            <p className={styles.courseAuthor}>by purepearl studio</p>
+            <p className={styles.courseAuthor}>
+              by <span className={styles.authorGreen}>purepearl studio</span>
+            </p>
 
             {/* Badges / Meta Pills */}
             <div className={styles.metaPillsRow}>
+              {/* Intermediate */}
               <div className={styles.whitePill}>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#003be2" aria-hidden="true">
+                  <path d="M5 14h3v6H5v-6zm6-5h3v11h-3V9zm6-5h3v16h-3V4z" />
+                </svg>
+                <span>Intermediate</span>
+              </div>
+
+              {/* 4.8 (172 reviews) */}
+              <div className={styles.whitePill}>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <path
                     d="M10 1L12.79 6.65L19 7.55L14.5 11.94L15.56 18.13L10 15.21L4.44 18.13L5.5 11.94L1 7.55L7.21 6.65L10 1Z"
                     fill="#003be2"
                   />
                 </svg>
-                <span>4.5 (240)</span>
+                <span>4.8 (172 reviews)</span>
               </div>
 
+              {/* 199 Students */}
               <div className={styles.whitePill}>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M4 14H6V17H4V14ZM9 10H11V17H9V10ZM14 6H16V17H14V6Z" fill="#242528" />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#003be2" aria-hidden="true">
+                  <path d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87z" />
+                  <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24C14.5 5.27 15 6.58 15 8s-.5 2.73-1.33 3.76c.42.14.86.24 1.33.24z" />
+                  <path d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" />
+                  <path d="M9 13c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3l0-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1z" />
                 </svg>
-                <span>Beginner</span>
-              </div>
-
-              <div className={styles.whitePill}>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M4 4H10V10H4V4ZM14 4H20V10H14V4ZM4 14H10V20H4V14ZM14 14H20V20H14V14Z" stroke="#242528" strokeWidth="2" />
-                </svg>
-                <span>UI/UX Design</span>
+                <span>199 Students</span>
               </div>
             </div>
           </div>
 
           {/* Share Button at x: 1283 */}
           <button className={styles.shareBtn} aria-label="Share this course">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M4 12V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V12M16 6L12 2M12 2L8 6M12 2V15"
-                stroke="#242528"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#242528" aria-hidden="true">
+              <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" />
             </svg>
             <span>Share</span>
           </button>

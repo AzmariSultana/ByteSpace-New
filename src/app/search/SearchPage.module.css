@@ -24,46 +24,6 @@
   transform-origin: top center;
 }
 
-/* 3D Floating Ornaments in Hero */
-.ornamentLeftTorus {
-  position: absolute;
-  left: -97px;
-  top: 149px;
-  width: 332px;
-  height: 331px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.ornamentLeftSpring {
-  position: absolute;
-  left: 34px;
-  top: 632px;
-  width: 188px;
-  height: 188px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.ornamentRightSphere {
-  position: absolute;
-  left: 1154px;
-  top: 164px;
-  width: 222px;
-  height: 222px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.ornamentRightCone {
-  position: absolute;
-  left: 1214px;
-  top: 571px;
-  width: 357px;
-  height: 356px;
-  z-index: 1;
-  pointer-events: none;
-}
 
 /* Search Content in Hero */
 .searchHeroContent {

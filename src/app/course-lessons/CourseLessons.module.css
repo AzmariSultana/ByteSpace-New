@@ -2,9 +2,15 @@
   --scale: calc(min(100vw, 1440px) / 1440px);
   position: relative;
   width: 100%;
-  height: calc(2883px * var(--scale));
+  height: calc(2930px * var(--scale));
   overflow: hidden;
-  background-color: #ffffff;
+  background: linear-gradient(
+    to bottom,
+    #003be2 0px,
+    #003be2 calc(957px * var(--scale)),
+    #ffffff calc(957px * var(--scale)),
+    #ffffff 100%
+  );
 }
 
 .stage {
@@ -12,7 +18,7 @@
   left: 50%;
   top: 0;
   width: 1440px;
-  height: 2883px;
+  height: 2930px;
   transform: translateX(-50%) scale(var(--scale));
   transform-origin: top center;
 }
@@ -89,10 +95,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-family: var(--font-poppins), sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  color: #242528;
 }
 
 .modInfo {
@@ -102,18 +104,18 @@
 }
 
 .modTitle {
-  font-family: var(--font-poppins), sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
   color: #242528;
 }
 
 .modDesc {
   font-family: var(--font-satoshi), sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 25.6px;
   color: #4b4c53;
 }
 
@@ -130,46 +132,40 @@
   background: #ffffff;
   border: 1px solid #ced0d3;
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.progressHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 8px;
 }
 
 .progressTitle {
   font-family: var(--font-satoshi), sans-serif;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 14px;
+  line-height: 16.8px;
   color: #242528;
 }
 
 .progressPercent {
-  font-family: var(--font-satoshi), sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  color: #003be2;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43.2px;
+  color: #242528;
 }
 
 .progressBarTrack {
   width: 100%;
   height: 8px;
-  background: #f5f5f6;
+  background: #e5e6e8;
   border-radius: 24px;
   overflow: hidden;
 }
 
 .progressBarFill {
   height: 100%;
-  background-color: #003be2;
+  background-color: #d4fb20;
   border-radius: 24px;
   transition: width 0.3s ease;
 }
@@ -181,4 +177,25 @@
   top: 2358px;
   width: 1440px;
   z-index: 10;
+}
+
+.footerWrapper div[class*="footerNav"] {
+  flex-direction: row;
+}
+
+.footerWrapper div[class*="newsletterCol"] {
+  width: 528px;
+}
+
+.footerWrapper div[class*="linksWrapper"] {
+  width: 580px;
+  margin-top: 48px;
+}
+
+.footerWrapper div[class*="copyrightSection"] {
+  margin-top: 130px;
+}
+
+.footerWrapper div[class*="copyrightRow"] {
+  flex-direction: row;
 }
