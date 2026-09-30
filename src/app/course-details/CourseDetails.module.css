@@ -2,9 +2,15 @@
   --scale: calc(min(100vw, 1440px) / 1440px);
   position: relative;
   width: 100%;
-  height: calc(2717px * var(--scale));
+  height: calc(2760px * var(--scale));
   overflow: hidden;
-  background-color: #ffffff;
+  background: linear-gradient(
+    to bottom,
+    #003be2 0px,
+    #003be2 calc(957px * var(--scale)),
+    #ffffff calc(957px * var(--scale)),
+    #ffffff 100%
+  );
 }
 
 .stage {
@@ -12,7 +18,7 @@
   left: 50%;
   top: 0;
   width: 1440px;
-  height: 2717px;
+  height: 2760px;
   transform: translateX(-50%) scale(var(--scale));
   transform-origin: top center;
 }
@@ -110,6 +116,10 @@
   gap: 8px;
 }
 
+.keyPointRow svg {
+  flex-shrink: 0;
+}
+
 .pointText {
   font-family: var(--font-satoshi), sans-serif;
   font-weight: 400;
@@ -125,4 +135,25 @@
   top: 2192px;
   width: 1440px;
   z-index: 10;
+}
+
+.footerWrapper div[class*="footerNav"] {
+  flex-direction: row;
+}
+
+.footerWrapper div[class*="newsletterCol"] {
+  width: 528px;
+}
+
+.footerWrapper div[class*="linksWrapper"] {
+  width: 580px;
+  margin-top: 48px;
+}
+
+.footerWrapper div[class*="copyrightSection"] {
+  margin-top: 130px;
+}
+
+.footerWrapper div[class*="copyrightRow"] {
+  flex-direction: row;
 }

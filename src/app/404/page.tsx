@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import GridBackground from "@/components/GridBackground";
@@ -19,51 +18,6 @@ export default function NotFoundPage() {
 
           {/* Grid Background */}
           <GridBackground height={957} width={1440} />
-
-          {/* 3D Floating Ornaments */}
-          {/* 1. Top Left Large Torus/Ornament */}
-          <div className={styles.ornamentTopLeft}>
-            <Image
-              src="/assets/images/figma_f1057d714a93edf29b02a9dbdb4fc552fd7ab847.png"
-              alt=""
-              width={332}
-              height={331}
-              priority
-            />
-          </div>
-
-          {/* 2. Bottom Left Spring/Cone */}
-          <div className={styles.ornamentBottomLeft}>
-            <Image
-              src="/assets/images/figma_6be36b89bfec399afb445a39d9bf4cb181332d48.png"
-              alt=""
-              width={188}
-              height={188}
-              priority
-            />
-          </div>
-
-          {/* 3. Top Right Sphere */}
-          <div className={styles.ornamentTopRight}>
-            <Image
-              src="/assets/images/figma_d5e9c4dc379dbf3d1f6679a4423483f6766a7931.png"
-              alt=""
-              width={222}
-              height={222}
-              priority
-            />
-          </div>
-
-          {/* 4. Bottom Right Large Cone */}
-          <div className={styles.ornamentBottomRight}>
-            <Image
-              src="/assets/images/figma_24321b8894c48b04befaa9e71f204daacc40bbc4.png"
-              alt=""
-              width={357}
-              height={356}
-              priority
-            />
-          </div>
 
           {/* Giant 404 Gradient Watermark */}
           <div className={styles.watermark404} aria-hidden="true">

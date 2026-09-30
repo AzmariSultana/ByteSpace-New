@@ -98,6 +98,12 @@
   color: #4f4f4f;
 }
 
+.authorName {
+  color: #003be2;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 400;
+}
+
 .ratingBadge {
   display: flex;
   align-items: center;
@@ -149,6 +155,25 @@
 
 .stackAvatar:first-child {
   margin-left: 0;
+}
+
+.stackCount {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #d4fb20;
+  border: 1.5px solid #ffffff;
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #242528;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .priceRow {
