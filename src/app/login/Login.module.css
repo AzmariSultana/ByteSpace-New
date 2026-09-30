@@ -9,12 +9,20 @@
 
 .stage {
   position: absolute;
-  left: 50%;
+  left: 0;
   top: 0;
   width: 1440px;
   height: 1024px;
-  transform: translateX(-50%) scale(var(--scale));
-  transform-origin: top center;
+  transform: scale(var(--scale));
+  transform-origin: top left;
+}
+
+@media (min-width: 1441px) {
+  .stage {
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: top center;
+  }
 }
 
 .header {
@@ -30,8 +38,8 @@
   position: absolute;
   left: 122px;
   top: 35px;
-  width: 171px;
-  height: 37px;
+  width: 29px;
+  height: 32px;
   display: flex;
   align-items: center;
 }
@@ -86,13 +94,18 @@
 
 .sphereOrnament {
   position: absolute;
-  left: 470px;
-  top: 626px;
-  width: 175px;
-  height: 175px;
-  transform: rotate(180deg);
-  z-index: 15;
+  left: 464px;
+  top: 606px;
+  width: 182px;
+  height: 182px;
+  z-index: 6;
   pointer-events: none;
+}
+
+.sphereOrnament img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Course Cards */
@@ -192,6 +205,11 @@
   color: #4f4f4f;
 }
 
+.studioText {
+  color: #003be2;
+  font-weight: 400;
+}
+
 .ratingBadge {
   display: flex;
   align-items: center;
@@ -244,6 +262,24 @@
   margin-left: 0;
 }
 
+.avatarMore {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #000000;
+  border: 1.5px solid #ffffff;
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-satoshi), sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
 .cardPriceRow {
   display: flex;
   align-items: baseline;
@@ -252,10 +288,10 @@
 
 .priceAmount {
   font-family: var(--font-poppins), sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   line-height: 28px;
-  color: #300b6a;
+  color: #003be2;
 }
 
 .priceUnit {
@@ -309,6 +345,11 @@
   font-size: 10px;
   line-height: 15px;
   color: #82868e;
+}
+
+.happyRatingScore {
+  color: #242528;
+  font-weight: 500;
 }
 
 .happyAvatarStack {

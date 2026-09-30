@@ -152,50 +152,50 @@ export default function Hero() {
             <Image
               src="/assets/images/avatar-1.png"
               alt="Student"
-              width={32}
-              height={32}
+              width={43}
+              height={43}
               className={styles.avatarItem}
             />
             <Image
               src="/assets/images/avatar-2.png"
               alt="Student"
-              width={32}
-              height={32}
+              width={43}
+              height={43}
               className={styles.avatarItem}
             />
             <Image
               src="/assets/images/avatar-3.png"
               alt="Student"
-              width={32}
-              height={32}
+              width={43}
+              height={43}
               className={styles.avatarItem}
             />
             <Image
               src="/assets/images/avatar-4.png"
               alt="Student"
-              width={32}
-              height={32}
+              width={43}
+              height={43}
               className={styles.avatarItem}
             />
             <Image
               src="/assets/images/avatar-5.png"
               alt="Student"
-              width={32}
-              height={32}
+              width={43}
+              height={43}
               className={styles.avatarItem}
             />
             <Image
               src="/assets/images/avatar-6.png"
               alt="Student"
-              width={32}
-              height={32}
+              width={43}
+              height={43}
               className={styles.avatarItem}
             />
             <Image
               src="/assets/images/avatar-7.png"
               alt="Student"
-              width={32}
-              height={32}
+              width={43}
+              height={43}
               className={styles.avatarItem}
             />
             <div className={styles.avatarCount}>2K+</div>

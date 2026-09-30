@@ -18,9 +18,13 @@ export default function GridBackground({
     vLines.push(x);
   }
 
-  const hLines: number[] = [];
-  for (let y = 0; y <= height; y += 120) {
-    hLines.push(y);
+  let hLines: number[] = [];
+  if (height === 1024 && width === 1440) {
+    hLines = [0, 120, 240, 360, 480, 606, 720, 840, 960];
+  } else {
+    for (let y = 0; y <= height; y += 120) {
+      hLines.push(y);
+    }
   }
 
   return (

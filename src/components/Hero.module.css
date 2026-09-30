@@ -61,6 +61,15 @@
   object-position: bottom;
   width: 100%;
   height: 100%;
+  filter:
+    drop-shadow(0.5px 0.7px 3px rgba(0, 0, 0, 0.04))
+    drop-shadow(2.2px 3.2px 5.7px rgba(0, 0, 0, 0.06))
+    drop-shadow(5.4px 7.7px 9.6px rgba(0, 0, 0, 0.07))
+    drop-shadow(10.2px 14.6px 16px rgba(0, 0, 0, 0.08))
+    drop-shadow(17px 24px 24px rgba(0, 0, 0, 0.09))
+    drop-shadow(26px 37px 36px rgba(0, 0, 0, 0.10))
+    drop-shadow(37px 53px 56px rgba(0, 0, 0, 0.105))
+    drop-shadow(51px 73px 72px rgba(0, 0, 0, 0.13));
 }
 
 /* Hero Content */
@@ -183,7 +192,7 @@
   height: 70px;
   border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   padding: 14px 18px;
   box-sizing: border-box;
   text-align: left;
@@ -224,7 +233,7 @@
   height: 131px;
   border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   padding: 16px 18px;
   box-sizing: border-box;
   text-align: left;
@@ -249,7 +258,7 @@
 }
 
 .progressTrack {
-  width: 196px;
+  width: 200px;
   height: 8px;
   background-color: #f6f6f6;
   border-radius: 24px;
@@ -257,7 +266,7 @@
 }
 
 .progressBar {
-  width: 56%;
+  width: 112px;
   height: 100%;
   background-color: #d4fb20;
   border-radius: 24px;
@@ -271,7 +280,7 @@
   height: 121px;
   border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   padding: 16px;
   box-sizing: border-box;
   text-align: left;
@@ -295,7 +304,7 @@
 
 .ratingScore {
   font-family: var(--font-satoshi);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 12px;
   line-height: 19.2px;
   color: #242528;
@@ -322,10 +331,10 @@
 }
 
 .avatarItem {
-  width: 32px;
-  height: 32px;
+  width: 43px;
+  height: 43px;
   border-radius: 50%;
-  margin-left: -6px;
+  margin-left: -16px;
   object-fit: cover;
   flex-shrink: 0;
   border: 2px solid #ffffff;
@@ -336,8 +345,8 @@
 }
 
 .avatarCount {
-  width: 32px;
-  height: 32px;
+  width: 43px;
+  height: 43px;
   border-radius: 50%;
   background-color: #d4fb20;
   color: #242528;
@@ -347,7 +356,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -6px;
+  margin-left: -16px;
   flex-shrink: 0;
   border: 2px solid #ffffff;
 }
